@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13df9cabd5071a34997d135453e7e5fc, type: 3}
-  m_Name: Bob
+  m_Script: {fileID: 11500000, guid: 7f92a1e6227f429409c3bc80b73d5a05, type: 3}
+  m_Name: Fth
   m_EditorClassIdentifier: 
-  Str: 0
-  Dex: 0
-  Int: 0
-  Fth: 0
+  Value: 3
