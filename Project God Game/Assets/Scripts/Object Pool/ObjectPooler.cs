@@ -8,15 +8,6 @@ public class ObjectPooler : MonoBehaviour
 
     public Dictionary<string, List<GameObject>> poolDictionary;
 
-    #region Singleton
-    public static ObjectPooler SharedInstance;
-
-    private void Awake()
-    {
-        SharedInstance = this;
-    }
-    #endregion
-
     void Start()
     {
         poolDictionary = new Dictionary<string, List<GameObject>>();

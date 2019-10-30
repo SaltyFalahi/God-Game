@@ -22,14 +22,18 @@ public class Production : MonoBehaviour
 
     public float countdown;
 
+    public bool assigned;
+
     private int productionStat;
 
     private float timer;
 
     void Update()
     {
-        if (stats != null)
+        if (assigned)
         {
+            timer -= Time.deltaTime;
+
             switch (mainStat)
             {
                 case AllStats.Str:
@@ -51,21 +55,17 @@ public class Production : MonoBehaviour
                 default:
                     break;
             }
-        }
 
-        if (timer <= 0)
+            if (timer <= 0)
+            {
+                resource.Value += (lvl + productionStat) / 2;
+                timer = countdown;
+            }
+        }
+        else
         {
-            resource.Value += (lvl + productionStat) / 2;
+            stats = null;
             timer = countdown;
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Villager")
-        {
-            stats = other.gameObject.GetComponent<Villager>();
-            timer -= Time.deltaTime;
         }
     }
 }
