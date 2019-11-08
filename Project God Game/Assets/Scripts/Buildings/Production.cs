@@ -14,11 +14,12 @@ public class Production : MonoBehaviour
 
     public AllStats mainStat;
 
-    public FloatVariable resource;
+    public IntVariable resource;
 
     public Villager stats;
 
     public int lvl = 1;
+    public int productionRate;
 
     public float countdown;
 
@@ -58,7 +59,8 @@ public class Production : MonoBehaviour
 
             if (timer <= 0)
             {
-                resource.Value += (lvl + productionStat) / 2;
+                productionRate = (lvl + productionStat) / 2;
+                resource.Value += productionRate;
                 timer = countdown;
             }
         }
