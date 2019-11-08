@@ -9,6 +9,7 @@ public class Assignment : MonoBehaviour
     public Transform workPos;
 
     public bool free;
+
     void Start()
     {
         
