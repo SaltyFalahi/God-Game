@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - arrow
-  - bomb
+  - Villager
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -17,7 +16,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Unwalkable
+  - Phone
   - 
   - 
   - 
