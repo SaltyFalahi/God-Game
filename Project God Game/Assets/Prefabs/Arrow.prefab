@@ -89,7 +89,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6709808473209873496}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -106,8 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0102b2ec17dae0a48adbda6b86dfed76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBulletSpeed: 100
+  current: 0
   myBulletTimer: 5
+  bulletForce: 100
+  singleDam: 0
+  AOEDam: 0
 --- !u!54 &-235798953193791119
 Rigidbody:
   m_ObjectHideFlags: 0

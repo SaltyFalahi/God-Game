@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0102b2ec17dae0a48adbda6b86dfed76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBulletSpeed: 50
+  bulletRb: {fileID: 0}
+  target: {fileID: 0}
   myBulletTimer: 5
+  bulletForce: 100
 --- !u!54 &8939789048285674391
 Rigidbody:
   m_ObjectHideFlags: 0
