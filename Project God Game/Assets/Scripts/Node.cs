@@ -2,34 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node : System.IComparable
+public class Node
 {
+    public bool isWalkable;
+
+    public Vector3 nodeWorldPos;
+
+    public int gCost, hCost;
+    public int gridX, gridY;
+
     public Node parent;
-    public bool walkable;
-    public bool isVisited;
-    public Vector3 worldPos;
-    public Vector2Int index;
 
-    public int hCost;
-    public int gCost;
-    public int fCost;
-
-    public Node(bool _walkable, Vector3 _worldPos, Vector2Int _index)
+    public Node(bool walkable, Vector3 nodePos, int _gridX, int _gridY)
     {
-        walkable = _walkable;
-        worldPos = _worldPos;
-        index = _index;
+        isWalkable = walkable;
+        nodeWorldPos = nodePos;
+        gridX = _gridX;
+        gridY = _gridY;
     }
 
-    public int CompareTo(object obj)
+    public int fCost
     {
-        if (((Node)obj).fCost < fCost)
+        get
         {
-            return -1;
-        }
-        else
-        {
-            return 1;
+            return gCost + hCost;
         }
     }
 }

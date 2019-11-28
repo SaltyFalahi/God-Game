@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Villager
   - Building
+  - Unwalkable
+  - Arrow
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - 
   - PostProcessing
   - Phone
-  - 
+  - Unwalkable
   - 
   - 
   - 
