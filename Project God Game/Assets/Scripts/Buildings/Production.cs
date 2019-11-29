@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Production : MonoBehaviour
+public class Production : Assignable
 {
     public enum AllStats
     {
@@ -16,14 +16,11 @@ public class Production : MonoBehaviour
 
     public IntVariable resource;
 
-    public Villager stats;
-
-    public int lvl = 1;
     public int productionRate;
 
-    public float countdown;
+    public int lvl = 1;
 
-    public bool assigned;
+    public float countdown;
 
     private int productionStat;
 

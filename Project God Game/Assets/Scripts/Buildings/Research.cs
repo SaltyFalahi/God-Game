@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Research : MonoBehaviour
+public class Research : Assignable
 {
     public List<Progression> progress;
 
@@ -12,11 +12,14 @@ public class Research : MonoBehaviour
 
     void Update()
     {
-        if (worship.Value >= progress[index].count && index < progress.Count)
+        if (assigned)
         {
-            BuildTool(progress[index].obj);
-            worship.Value -= progress[index].count;
-            index++;
+            if (worship.Value >= progress[index].count && index < progress.Count)
+            {
+                BuildTool(progress[index].obj);
+                worship.Value -= progress[index].count;
+                index++;
+            }
         }
     }
 
