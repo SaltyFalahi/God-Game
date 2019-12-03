@@ -4,15 +4,41 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Rigidbody rb;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnHandHover()
+    {
+        
+    }
+    public void OnHandTrigger(HandController handPara) 
+    {
+        if (handPara!=null)
+        {
+            transform.SetParent(handPara.transform);
+            
+        }
+        if (rb)
+        {
+            rb.isKinematic = true;
+        }
+
+    }
+    public void OnHandTriggerRelease() 
+    {
+        if (rb)
+        {
+            rb.isKinematic = false;
+        }
     }
 }

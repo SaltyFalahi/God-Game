@@ -16,15 +16,12 @@ public class DeleteMe : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.X))
         {
-            var cols = Physics.OverlapSphere(this.transform.position, 3, collisionLayer);
+            var cols = Physics.OverlapSphere(this.transform.position, 1, collisionLayer);
             if (cols.Length>0) {
                 Destroy(cols[0].gameObject); 
             }
         }
 
     }
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(this.transform.position, 1);
-    }
+   
 }
