@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PhoneTargeting : MonoBehaviour
 {
-    public Object target;
-
     public GameObject obj;
 
     public Camera current;

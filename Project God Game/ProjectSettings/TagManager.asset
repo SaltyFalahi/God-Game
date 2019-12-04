@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Villager
   - Building
+  - Wooden Key
   layers:
   - Default
   - TransparentFX

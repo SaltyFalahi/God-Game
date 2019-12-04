@@ -30,17 +30,19 @@ public class Storage : Assignable
     public float countdown;
 
     public bool full;
+    public bool townhall;
 
     private float timer;
 
     void Start()
     {
         sm.AddStorage(gameObject);
+        type = "Storage";
     }
 
     void Update()
     {
-        if (assigned)
+        if (assigned && !townhall)
         {
             timer -= Time.deltaTime;
 
@@ -49,6 +51,31 @@ public class Storage : Assignable
             if (timer <= 0)
             {
                 storageRate = (lvl + stats.Str) / 2;
+
+                if (totalCount == storageCapacity)
+                {
+                    full = true;
+                }
+                else
+                {
+                    full = false;
+                    Store("Wood");
+                    Store("Stone");
+                    Store("Iron");
+                    Store("Food");
+                }
+                timer = countdown;
+            }
+        }
+        else if (townhall)
+        {
+            timer -= Time.deltaTime;
+
+            totalCount = woodCount + stoneCount + ironCount + foodCount;
+
+            if (timer <= 0)
+            {
+                storageRate = 1;
 
                 if (totalCount == storageCapacity)
                 {

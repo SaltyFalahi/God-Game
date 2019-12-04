@@ -8,7 +8,12 @@ public class Research : Assignable
 
     public IntVariable worship;
 
-    private int index = 0;
+    public int index = 0;
+
+    private void Start()
+    {
+        type = "Research";
+    }
 
     void Update()
     {

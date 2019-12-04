@@ -32,8 +32,8 @@ public class Assignment : MonoBehaviour
             if (free)
             {
                 villager = other.gameObject;
-                GetComponent<Production>().stats = villager.GetComponent<Villager>();
-                GetComponent<Production>().assigned = true;
+                GetComponent<Assignable>().stats = villager.GetComponent<Villager>();
+                GetComponent<Assignable>().assigned = true;
             }
         }
     }
@@ -42,7 +42,7 @@ public class Assignment : MonoBehaviour
     {
         if(other.gameObject.tag == "Villager")
         {
-            GetComponent<Production>().assigned = false;
+            GetComponent<Assignable>().assigned = false;
             villager = null;
         }
     }

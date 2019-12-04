@@ -10,7 +10,11 @@ public class StatsDisplay : MonoBehaviour
 
     public GameObject target;
 
-    private Production building;
+    private Assignable building;
+    private Production production;
+    private Storage storage;
+    private KeyForge keyForge;
+    private Research research;
 
     private Villager villager;
 
@@ -43,17 +47,96 @@ public class StatsDisplay : MonoBehaviour
 
                 case "Building":
 
-                    building = target.GetComponent<Production>();
+                    building = target.GetComponent<Assignable>();
 
                     name.text = "Name: " + building.name;
 
-                    stats.text = "Stats: \n" +
-                        "Production Stat: " + building.mainStat.ToString() + "\n" +
-                        "Produced Resource: " + building.resource.name + "\n" +
-                        "Production Rate: " + building.productionRate;
-                    break;
+                    switch (building.type)
+                    {
+                        case "Gather":
 
-                default:
+                            production = target.GetComponent<Production>();
+
+                            if(production.stats != null)
+                            {
+                                stats.text = "Stats: " +
+                                "\n" + "Production Stat: " + production.mainStat.ToString() +
+                                "\n" + "Produced Resource: " + production.resource.name +
+                                "\n" + "Production Rate: " + production.productionRate +
+                                "\n" + "Current Worker: " + production.stats.villagerName;
+                            }
+                            else
+                            {
+                                stats.text = "Stats: " +
+                                "\n" + "Production Stat: " + production.mainStat.ToString() +
+                                "\n" + "Produced Resource: " + production.resource.name +
+                                "\n" + "Production Rate: " + production.productionRate +
+                                "\n" + "Current Worker: None";
+                            }
+
+                            break;
+
+                        case "Storage":
+
+                            storage = target.GetComponent<Storage>();
+
+                            if (storage.stats != null)
+                            {
+                                stats.text = "Stats: \n" + "Total Capacity: " + storage.totalCount + "/" + storage.storageCapacity +
+                                "\n" + "Stored Wood: " + storage.woodCount +
+                                "\n" + "Stored Stone: " + storage.stoneCount +
+                                "\n" + "Stored Iron: " + storage.ironCount +
+                                "\n" + "Stored Food: " + storage.foodCount +
+                                "\n" + "Current Worker: " + storage.stats.villagerName;
+                            }
+                            else
+                            {
+                                stats.text = "Stats: \n" + "Total Capacity: " + storage.totalCount + "/" + storage.storageCapacity +
+                                "\n" + "Stored Wood: " + storage.woodCount +
+                                "\n" + "Stored Stone: " + storage.stoneCount +
+                                "\n" + "Stored Iron: " + storage.ironCount +
+                                "\n" + "Stored Food: " + storage.foodCount +
+                                "\n" + "Current Worker: None";
+                            }
+
+                            break;
+
+                        case "Keyforge":
+
+                            keyForge = target.GetComponent<KeyForge>();
+
+                            if (keyForge.stats != null)
+                            {
+                                stats.text = "Stats: \n" + "Current Request: " + keyForge.request.type +
+                                "\n" + "Current Amount Needed: " + keyForge.request.count +
+                                "\n" + "Current Worker: " + keyForge.stats.villagerName;
+                            }
+                            else
+                            {
+                                stats.text = "Stats: \n" + "Current Request: " + keyForge.request.type +
+                                "\n" + "Current Amount Needed: " + keyForge.request.count +
+                                "\n" + "Current Worker: None";
+                            }
+
+                            break;
+
+                        case "Research":
+
+                            research = target.GetComponent<Research>();
+
+                            if (research.stats != null)
+                            {
+                                stats.text = "Stats: \n" + "Current Research: " + research.progress[research.index].name +
+                                "\n" + "Current Worker: " + keyForge.stats.villagerName;
+                            }
+                            else
+                            {
+                                stats.text = "Stats: \n" + "Current Research: " + research.progress[research.index].name +
+                                "\n" + "Current Worker: None";
+                            }
+                            break;
+                    }
+
                     break;
             }
         }

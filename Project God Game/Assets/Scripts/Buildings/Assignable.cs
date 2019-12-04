@@ -6,5 +6,7 @@ public class Assignable : MonoBehaviour
 {
     public Villager stats;
 
+    public string type;
+
     public bool assigned;
 }

@@ -26,7 +26,12 @@ public class Production : Assignable
 
     private float timer;
 
-    void Update()
+    private void Start()
+    {
+        type = "Gather";
+    }
+
+    private void Update()
     {
         if (assigned)
         {

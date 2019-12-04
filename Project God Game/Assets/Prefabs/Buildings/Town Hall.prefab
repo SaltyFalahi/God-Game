@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 839350082}
   m_Layer: 0
   m_Name: Town Hall
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,8 +110,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   villagers: []
+  villagerModels:
+  - {fileID: 5867135627819890662, guid: 079adf6d7fa476e4ab70c99271a6afe5, type: 3}
+  - {fileID: 5572776136798558104, guid: fa608e57e092e514da02dbbbd0d7bfbd, type: 3}
+  - {fileID: 7545582087576727615, guid: d4b54523322f44a4ca7c77a0a00c2517, type: 3}
+  - {fileID: 911239689523881786, guid: 9c560aa2bb9bd1545a8ed91dc4b7caf8, type: 3}
+  - {fileID: 3013328174481454384, guid: 6047965c7626dd64e951a57133fb56d7, type: 3}
+  - {fileID: 6680659060734753043, guid: 9ba04c0b37661544e82d94233c6da064, type: 3}
   food: {fileID: 11400000, guid: 6fada6fb121082740881063722cf0307, type: 2}
-  prefab: {fileID: 5727959515954979618, guid: d3c6e4d81355bce4e9322a4adc6820a6, type: 3}
   spawn: {fileID: 479116112631033275}
 --- !u!114 &7304367223518460143
 MonoBehaviour:
@@ -125,6 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4f718a039068c4fb2680672eb649f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  type: 
+  assigned: 0
   sm: {fileID: 2041614909677114814}
   gatheredWood: {fileID: 11400000, guid: eccf66ed8b51afa47b33eaf223419916, type: 2}
   gatheredStone: {fileID: 11400000, guid: 55588c65e83b22343a1e475ef303b0c9, type: 2}
@@ -135,12 +144,15 @@ MonoBehaviour:
   storedIron: {fileID: 11400000, guid: b6ccfee1fb181744296441e14a565489, type: 2}
   storedFood: {fileID: 11400000, guid: 6fada6fb121082740881063722cf0307, type: 2}
   storageCapacity: 10
+  storageRate: 0
+  totalCount: 0
+  lvl: 1
   woodCount: 0
   stoneCount: 0
   ironCount: 0
   foodCount: 0
+  countdown: 0
   full: 0
-  totalCount: 0
 --- !u!114 &2041614909677114814
 MonoBehaviour:
   m_ObjectHideFlags: 0

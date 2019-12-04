@@ -17,6 +17,7 @@ public class KeyForge : Assignable
     {
         RequestResource(progress[index].count, progress[index].name);
         index++;
+        type = "Keyforge";
     }
 
     void Update()
