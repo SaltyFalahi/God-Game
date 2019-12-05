@@ -15,19 +15,4 @@ public class Enemy : MonoBehaviour
     {
         
     }
-
-    void Damage()
-    {
-
-    }
-
-    void Freeze()
-    {
-
-    }
-
-    void Slow()
-    {
-
-    }
 }
