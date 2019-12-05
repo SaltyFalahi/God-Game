@@ -13,5 +13,6 @@ public class GridObject : ScriptableObject
 
     public float nodeDiameter;
 
-    public int gridSizeX, gridSizeY;
+    public int gridSizeX;
+    public int gridSizeY;
 }

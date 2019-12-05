@@ -29,7 +29,7 @@ public class TargetingController : MonoBehaviour
 
         if(enemy != null)
         {
-            SendMessage("Shoot", enemy);
+            enemy.SendMessage("Shoot", enemy);
         }
     }
 

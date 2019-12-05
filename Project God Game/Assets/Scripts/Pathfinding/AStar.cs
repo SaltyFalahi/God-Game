@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class AStar : MonoBehaviour
 {
-    public Transform seeker, target, tower;
+    public Transform seeker;
+    public Transform target;
+    public Transform building;
 
     public GridObject grid;
 
-    public List<GameObject> towers = new List<GameObject>();
+    public List<GameObject> buildings = new List<GameObject>();
 
-    public float mySpeed, maxForce, detectRange, attackRange;
+    [HideInInspector]
+    public float usedSpeed;
+
+    public float mySpeed;
+    public float maxForce;
+    public float detectRange;
+    public float attackRange;
+    public float timer;
+
+    public int damage;
+
+    float countdown;
 
     int index;
 
@@ -19,6 +32,7 @@ public class AStar : MonoBehaviour
     void Awake()
     {
         seeker = transform;
+        usedSpeed = mySpeed;
         myRb = GetComponent<Rigidbody>();
     }
 
@@ -26,7 +40,8 @@ public class AStar : MonoBehaviour
     {
         if (RangeCheck(detectRange))
         {
-            Vector3 vectVelocity = Vector3.Normalize(tower.position - transform.position) * mySpeed;
+            Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
+            Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
 
             vectVelocity = new Vector3(vectVelocity.x, 0, vectVelocity.z);
 
@@ -38,7 +53,13 @@ public class AStar : MonoBehaviour
 
             if (RangeCheck(attackRange))
             {
-                SendMessage("Damage", tower);
+                countdown -= Time.deltaTime;
+
+                if (countdown <= 0)
+                {
+                    building.SendMessage("Damage", damage);
+                    countdown = timer;
+                }
             }
         }
         else
@@ -62,14 +83,14 @@ public class AStar : MonoBehaviour
 
         Vector3 currentPos = transform.position;
 
-        for (int i = 0; i < towers.Count; i++)
+        for (int i = 0; i < buildings.Count; i++)
         {
-            distance = Vector3.Distance(towers[i].transform.position, transform.position);
+            distance = Vector3.Distance(buildings[i].transform.position, transform.position);
 
             if (distance < tempDist)
             {
                 tempDist = distance;
-                tower = towers[i].transform;
+                building = buildings[i].transform;
             }
         }
 
@@ -82,11 +103,11 @@ public class AStar : MonoBehaviour
         Node targetNode = UnitPosition(targetPos);
 
         List<Node> openNode = new List<Node>();
-        List<Node> closedNode = new List<Node>(); //refer to https://www.geeksforgeeks.org/hashset-in-c-sharp-with-examples/
+        List<Node> closedNode = new List<Node>();
 
         openNode.Add(startNode);
 
-        while(openNode.Count > 0)
+        while (openNode.Count > 0)
         {
             Node currentNode = openNode[0];
 
@@ -134,7 +155,7 @@ public class AStar : MonoBehaviour
 
     void PathFollowing()
     {
-        Vector3 vectVelocity = Vector3.Normalize(finalPath[index].nodeWorldPos - transform.position) * mySpeed;
+        Vector3 vectVelocity = Vector3.Normalize(finalPath[index].nodeWorldPos - transform.position) * usedSpeed;
 
         vectVelocity = new Vector3(vectVelocity.x, 0, vectVelocity.z);
 
@@ -161,7 +182,7 @@ public class AStar : MonoBehaviour
         finalPath = path;
     }
 
-    int getDist (Node nodeA, Node nodeB)
+    int getDist(Node nodeA, Node nodeB)
     {
         int distX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
         int distY = Mathf.Abs(nodeA.gridY - nodeB.gridY);

@@ -8,8 +8,10 @@ public class Node
 
     public Vector3 nodeWorldPos;
 
-    public int gCost, hCost;
-    public int gridX, gridY;
+    public int gCost;
+    public int hCost;
+    public int gridX;
+    public int gridY;
 
     public Node parent;
 
