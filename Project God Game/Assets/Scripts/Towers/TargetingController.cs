@@ -14,8 +14,6 @@ public class TargetingController : MonoBehaviour
         float distance = Mathf.Infinity;
         float tempDist = Mathf.Infinity;
 
-        Vector3 currentPos = transform.position;
-
         for (int i = 0; i < enemies.Count; i++)
         {
             distance = Vector3.Distance(enemies[i].transform.position, transform.position);
@@ -29,7 +27,7 @@ public class TargetingController : MonoBehaviour
 
         if(enemy != null)
         {
-            enemy.SendMessage("Shoot", enemy);
+            SendMessage("Shoot", enemy); //inside the TowerShoot script
         }
     }
 

@@ -38,41 +38,49 @@ public class AStar : MonoBehaviour
 
     void Update()
     {
-        if (RangeCheck(detectRange))
+        //if (RangeCheck(detectRange))
+        //{
+        //    Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
+
+        //    vectVelocity = new Vector3(vectVelocity.x, 0, vectVelocity.z);
+
+        //    Vector3 mySteering = vectVelocity - myRb.velocity;
+
+        //    Vector3.ClampMagnitude(mySteering, maxForce);
+
+        //    myRb.AddForce(mySteering);
+
+        //    if (RangeCheck(attackRange))
+        //    {
+        //        countdown -= Time.deltaTime;
+
+        //        if (countdown <= 0)
+        //        {
+        //            //building.SendMessage("Damage", damage);
+        //            countdown = timer;
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    FindPath(seeker.position, target.position);
+        //    if (transform.position == finalPath[index].nodeWorldPos)
+        //    {
+        //        index++;
+        //    }
+        //    else
+        //    {
+        //        PathFollowing();
+        //    }
+        //}
+        FindPath(seeker.position, target.position);
+        if (transform.position == finalPath[index].nodeWorldPos)
         {
-            Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
-            Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
-
-            vectVelocity = new Vector3(vectVelocity.x, 0, vectVelocity.z);
-
-            Vector3 mySteering = vectVelocity - myRb.velocity;
-
-            Vector3.ClampMagnitude(mySteering, maxForce);
-
-            myRb.AddForce(mySteering);
-
-            if (RangeCheck(attackRange))
-            {
-                countdown -= Time.deltaTime;
-
-                if (countdown <= 0)
-                {
-                    building.SendMessage("Damage", damage);
-                    countdown = timer;
-                }
-            }
+            index++;
         }
         else
         {
-            FindPath(seeker.position, target.position);
-            if (transform.position == finalPath[index].nodeWorldPos)
-            {
-                index++;
-            }
-            else
-            {
-                PathFollowing();
-            }
+            PathFollowing();
         }
     }
 
