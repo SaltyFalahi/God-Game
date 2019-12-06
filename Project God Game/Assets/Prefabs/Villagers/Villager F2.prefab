@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402a43b3d2c56a048b310cf252407e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: {fileID: 4900000, guid: 8c24601d060152243a5c400d9ecf5148, type: 3}
+  textFile: {fileID: 4900000, guid: 5b13cf5fd477dca41b36bad12ec4c71f, type: 3}
   villagerName: 
   Str: 0
   Dex: 0
