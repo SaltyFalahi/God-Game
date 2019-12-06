@@ -26,13 +26,18 @@ TagManager:
   - 
   - PostProcessing
   - Phone
+  - Hand
   - 
+  - sdf
+  - sdf
   - 
   - Unwalkable
   - collisionLayer
   - 
   - 
   - 
+  - sdf
+  - pickables
   - 
   - 
   - 
