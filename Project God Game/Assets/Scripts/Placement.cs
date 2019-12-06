@@ -10,7 +10,7 @@ public class Placement : MonoBehaviour
 
     public Rigidbody rb;
 
-    public NodeGrid grid;
+    public GridObject grid;
 
     public Building building;
 
@@ -30,13 +30,11 @@ public class Placement : MonoBehaviour
         {
             rb.isKinematic = false;
 
-            Debug.DrawLine(transform.position, -Vector3.up * 10);
-
             if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10))
             {
                 rb.isKinematic = true;
 
-                phantom.transform.position = grid.NodeFromWorldPoint(point.position).nodeWorldPos;
+                phantom.transform.position = UnitPosition(point.position).nodeWorldPos;
 
                 building.placed = true;
 
@@ -44,5 +42,19 @@ public class Placement : MonoBehaviour
                 building.index++;
             }
         }
+    }
+
+    public Node UnitPosition(Vector3 worldPosition)
+    {
+        float percentX = (worldPosition.x + grid.gridWorldSize.x / 2) / grid.gridWorldSize.x;
+        float percentY = (worldPosition.z + grid.gridWorldSize.y / 2) / grid.gridWorldSize.y;
+
+        percentX = Mathf.Clamp01(percentX);
+        percentY = Mathf.Clamp01(percentY);
+
+        int x = Mathf.RoundToInt((grid.gridSizeX - 1) * percentX);
+        int y = Mathf.RoundToInt((grid.gridSizeX - 1) * percentY);
+
+        return grid.grid[x, y];
     }
 }

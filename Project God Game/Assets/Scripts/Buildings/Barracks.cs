@@ -2,17 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barracks : MonoBehaviour
+public class Barracks : Assignable
 {
-    // Start is called before the first frame update
-    void Start()
+    public float buffedTimer;
+
+    private float shotTimer;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Tower") && assigned)
+        {
+            other.GetComponent<TowerShoot>().shotTimer = buffedTimer;
+            shotTimer = other.GetComponent<TowerShoot>().shotTimer;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Tower") && assigned)
+        {
+            other.GetComponent<TowerShoot>().shotTimer = shotTimer;
+        }
     }
 }

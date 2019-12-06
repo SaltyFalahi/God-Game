@@ -41,7 +41,6 @@ public class AStar : MonoBehaviour
         if (RangeCheck(detectRange))
         {
             Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
-            Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
 
             vectVelocity = new Vector3(vectVelocity.x, 0, vectVelocity.z);
 
@@ -135,12 +134,12 @@ public class AStar : MonoBehaviour
                     continue;
                 }
 
-                int newMoveCostToNeighbor = currentNode.gCost + getDist(currentNode, neighbor);
+                int newMoveCostToNeighbor = currentNode.gCost + GetDist(currentNode, neighbor);
 
                 if (newMoveCostToNeighbor < neighbor.gCost || !openNode.Contains(neighbor))
                 {
                     neighbor.gCost = newMoveCostToNeighbor;
-                    neighbor.hCost = getDist(neighbor, targetNode);
+                    neighbor.hCost = GetDist(neighbor, targetNode);
 
                     neighbor.parent = currentNode;
 
@@ -182,7 +181,7 @@ public class AStar : MonoBehaviour
         finalPath = path;
     }
 
-    int getDist(Node nodeA, Node nodeB)
+    int GetDist(Node nodeA, Node nodeB)
     {
         int distX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
         int distY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
