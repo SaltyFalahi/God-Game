@@ -17,11 +17,11 @@ public class Pickable : MonoBehaviour
         
     }
 
-    public void OnHandHover()
+    public virtual void OnHandHover()
     {
-        
+        //highlight yourself
     }
-    public void OnHandTrigger(HandController handPara) 
+    public virtual void OnHandTrigger(HandController handPara) 
     {
         if (handPara!=null)
         {
@@ -34,8 +34,9 @@ public class Pickable : MonoBehaviour
         }
 
     }
-    public void OnHandTriggerRelease() 
+    public virtual void OnHandTriggerRelease() 
     {
+        transform.SetParent(null);
         if (rb)
         {
             rb.isKinematic = false;

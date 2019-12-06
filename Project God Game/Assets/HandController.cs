@@ -23,60 +23,62 @@ public class HandController : MonoBehaviour
     void Update()
     {
 
-        if (emptyHanded)
+
+
+
+
+        var cols = Physics.OverlapSphere(this.transform.position, 1, mask);
+      
+        if (cols.Length > 0)
         {
-
-
-            var cols = Physics.OverlapSphere(this.transform.position, 1,mask);
-            Debug.Log(cols.Length);
-            if (cols.Length > 0)
+            if (cols[0].gameObject.GetComponentInParent<Pickable>())
             {
-                if (cols[0].gameObject.GetComponentInParent<Pickable>())
+                Debug.Log("something is being hovered on");
+                if (emptyHanded)
                 {
-                    Debug.Log("something is being hovered on");
                     cols[0].SendMessage("OnHandHover", this);
-                
-                    switch (hand)
-                    {
-                        case Hand.Right:
-                            if (Input.GetButtonDown("XRI_Right_TriggerButton"))
-                            {
+                }
+                switch (hand)
+                {
+                    case Hand.Right:
+                        if (Input.GetButtonDown("XRI_Right_TriggerButton"))
+                        {
 
 
-                                cols[0].SendMessage("OnHandTrigger", this);
+                            cols[0].SendMessage("OnHandTrigger", this);
 
-                            }
+                            emptyHanded = false;
+                        }
 
-                            if (Input.GetButtonUp("XRI_Right_TriggerButton"))
-                            {
+                        if (Input.GetButtonUp("XRI_Right_TriggerButton"))
+                        {
 
 
-                                cols[0].SendMessage("OnHandTriggerReleased", this);
+                            cols[0].SendMessage("OnHandTriggerReleased", this);
+                            emptyHanded = true;
+                        }
 
-                            }
-
-                            break;
-                        case Hand.Left:
-                            if (Input.GetButton("XRI_Left_TriggerButton") || Input.GetKey(KeyCode.X))
-                            {
-                                Debug.Log("xerrrrrx");
-                                cols[0].SendMessage("OnHandTrigger", this);
-                            }
-                            if (Input.GetButtonUp("XRI_Left_TriggerButton"))
-                            {
-                                cols[0].SendMessage("OnHandTriggerReleased", this);
-                            }
-                            break;
-                        default:
-                            break;
-                    }
+                        break;
+                    case Hand.Left:
+                        if (Input.GetButton("XRI_Left_TriggerButton") || Input.GetKey(KeyCode.X))
+                        {
+                            Debug.Log("xerrrrrx");
+                            cols[0].SendMessage("OnHandTrigger", this);
+                            emptyHanded = false;
+                        }
+                        if (Input.GetButtonUp("XRI_Left_TriggerButton"))
+                        {
+                            cols[0].SendMessage("OnHandTriggerReleased", this);
+                            emptyHanded = true;
+                        }
+                        break;
+                    default:
+                        break;
                 }
             }
         }
+
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(this.transform.position, 1);
-    }
+
 }
