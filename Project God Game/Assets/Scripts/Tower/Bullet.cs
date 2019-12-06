@@ -22,14 +22,13 @@ public class Bullet : MonoBehaviour
     public int singleDam;
     public int AOEDam;
     public int AOERadius;
+    public int damage;
 
     Rigidbody bulletRb;
 
     Transform target;
 
     Vector3 direction;
-
-    int damage;
 
     private IEnumerator Start()
     {
@@ -115,7 +114,5 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        
     }
 }

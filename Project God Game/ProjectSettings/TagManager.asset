@@ -7,6 +7,12 @@ TagManager:
   - Villager
   - Building
   - Wooden Key
+  - Unwalkable
+  - Arrow
+  - Bomb
+  - Enemy
+  - Freeze
+  - Slow
   layers:
   - Default
   - TransparentFX
@@ -20,6 +26,8 @@ TagManager:
   - Phone
   - 
   - 
+  - Unwalkable
+  - collisionLayer
   - 
   - 
   - 

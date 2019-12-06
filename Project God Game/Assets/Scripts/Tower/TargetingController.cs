@@ -6,26 +6,20 @@ public class TargetingController : MonoBehaviour
 {
     Transform enemy;
 
-    List<GameObject> enemies = new List<GameObject>();
-
-    float tempDist;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        tempDist = 100;
-    }
+    public List<GameObject> enemies = new List<GameObject>();
 
     // Update is called once per frame
     void Update()
     {
         float distance = Mathf.Infinity;
+        float tempDist = Mathf.Infinity;
+
         Vector3 currentPos = transform.position;
 
         for (int i = 0; i < enemies.Count; i++)
         {
             distance = Vector3.Distance(enemies[i].transform.position, transform.position);
-
+            
             if (distance < tempDist)
             {
                 tempDist = distance;
@@ -35,7 +29,7 @@ public class TargetingController : MonoBehaviour
 
         if(enemy != null)
         {
-            SendMessage("Shoot", enemy);
+            enemy.SendMessage("Shoot", enemy);
         }
     }
 
