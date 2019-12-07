@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6349002981002454612}
   - component: {fileID: 6349002981002454611}
   - component: {fileID: 6349002981002454617}
+  - component: {fileID: -242537547178345549}
   m_Layer: 11
   m_Name: EnemyTest
   m_TagString: Enemy
@@ -125,3 +126,28 @@ MonoBehaviour:
   maxHealth: 50
   freezeTimer: 5
   slowTimer: 2
+--- !u!114 &-242537547178345549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6349002981002454618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbeb5029d6cb8af499a74ea14cbe8f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 0}
+  target: {fileID: 1892214283229454522, guid: a76dadee7019d4741905079b7355455f, type: 3}
+  building: {fileID: 8743607588449002663, guid: 9d37ed106d9b9af4f8caa518944764b7,
+    type: 3}
+  grid: {fileID: 11400000, guid: a7e80ce57444f3e4fb41d03342f84541, type: 2}
+  buildings: []
+  usedSpeed: 0
+  mySpeed: 10
+  maxForce: 200
+  detectRange: 0
+  attackRange: 0
+  timer: 0
+  damage: 0

@@ -5,13 +5,14 @@ using UnityEngine;
 public class Spawning : MonoBehaviour
 {
     public GameObject enemyShip;
-    public GameObject enemyUnit;
 
     public float spawnCountdownTimer;
     public float maxSpawnTimer;
 
     public float currentSpawnTimer;
+
     float maxSpawns = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class Spawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (maxSpawns >= 0)
+        if (maxSpawns >= 1)
         {
             spawnCountdownTimer -= Time.deltaTime;
             if (spawnCountdownTimer <= 0)
