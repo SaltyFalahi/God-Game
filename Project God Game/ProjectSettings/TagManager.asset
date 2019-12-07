@@ -15,6 +15,7 @@ TagManager:
   - Slow
   - Golden Key
   - Iron Key
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -38,11 +39,6 @@ TagManager:
   - 
   - sdf
   - pickables
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

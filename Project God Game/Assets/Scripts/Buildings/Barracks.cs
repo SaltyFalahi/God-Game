@@ -8,6 +8,11 @@ public class Barracks : Assignable
 
     private float shotTimer;
 
+    private void Start()
+    {
+        type = "Buff";
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Tower") && assigned)

@@ -2,83 +2,85 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Hand
-{
-    Right, Left
-}
-
 public class HandController : MonoBehaviour
 {
+    public enum Hand
+    {
+        Right, Left
+    }
+
     public Hand hand;
-    public bool emptyHanded;
-    public GameObject current;
+
     public LayerMask mask;
-    // Start is called before the first frame update
+
+    public List<GameObject> pickables;
+
+    public bool emptyHanded;
+
     void Start()
     {
         emptyHanded = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
-
-
-
-        var cols = Physics.OverlapSphere(this.transform.position, 1, mask);
-      
-        if (cols.Length > 0)
+        if (pickables.Count > 0)
         {
-            if (cols[0].gameObject.GetComponentInParent<Pickable>())
+            if (pickables[0].gameObject.GetComponentInParent<Pickable>())
             {
-                Debug.Log("something is being hovered on");
                 if (emptyHanded)
                 {
-                    cols[0].SendMessage("OnHandHover", this);
+                    pickables[0].SendMessage("OnHandHover", this);
                 }
+
                 switch (hand)
                 {
                     case Hand.Right:
                         if (Input.GetButtonDown("XRI_Right_TriggerButton"))
                         {
-
-
-                            cols[0].SendMessage("OnHandTrigger", this);
+                            pickables[0].SendMessage("OnHandTrigger", this);
 
                             emptyHanded = false;
                         }
 
                         if (Input.GetButtonUp("XRI_Right_TriggerButton"))
                         {
+                            pickables[0].SendMessage("OnHandTriggerReleased", this);
 
-
-                            cols[0].SendMessage("OnHandTriggerReleased", this);
                             emptyHanded = true;
                         }
 
                         break;
+
                     case Hand.Left:
                         if (Input.GetButton("XRI_Left_TriggerButton") || Input.GetKey(KeyCode.X))
                         {
-                            Debug.Log("xerrrrrx");
-                            cols[0].SendMessage("OnHandTrigger", this);
+                            pickables[0].SendMessage("OnHandTrigger", this);
+
                             emptyHanded = false;
                         }
                         if (Input.GetButtonUp("XRI_Left_TriggerButton"))
                         {
-                            cols[0].SendMessage("OnHandTriggerReleased", this);
+                            pickables[0].SendMessage("OnHandTriggerReleased", this);
+
                             emptyHanded = true;
                         }
                         break;
+
                     default:
                         break;
                 }
             }
         }
-
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        pickables.Add(other.gameObject);
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        pickables.Remove(other.gameObject);
+    }
 }

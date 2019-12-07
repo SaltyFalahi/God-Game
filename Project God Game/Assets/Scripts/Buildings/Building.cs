@@ -21,14 +21,12 @@ public class Building : MonoBehaviour
     void Start()
     {
         placement = GetComponent<Placement>();
-
     }
 
     void Update()
     {
         if (placed)
         {
-            Debug.Log("Request Count " + request.count);
             if (request.completed && index < progress.Count)
             {
                 RequestResource(progress[index].count, progress[index].name);

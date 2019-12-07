@@ -11,7 +11,6 @@ public class Pickable : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -21,6 +20,7 @@ public class Pickable : MonoBehaviour
     {
         //highlight yourself
     }
+
     public virtual void OnHandTrigger(HandController handPara) 
     {
         if (handPara!=null)
@@ -32,11 +32,11 @@ public class Pickable : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-
     }
-    public virtual void OnHandTriggerRelease() 
+    public virtual void OnHandTriggerReleased() 
     {
         transform.SetParent(null);
+
         if (rb)
         {
             rb.isKinematic = false;

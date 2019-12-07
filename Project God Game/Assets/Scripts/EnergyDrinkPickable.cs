@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class EnergyDrinkPickable : Pickable
 {
-    
     void Start()
     {
         
     }
-
    
     void Update()
     {
@@ -23,7 +21,7 @@ public class EnergyDrinkPickable : Pickable
     {
         
     }
-    public override void OnHandTriggerRelease()
+    public override void OnHandTriggerReleased()
     {
         
     }

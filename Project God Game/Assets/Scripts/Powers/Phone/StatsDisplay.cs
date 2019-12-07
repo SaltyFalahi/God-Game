@@ -10,11 +10,12 @@ public class StatsDisplay : MonoBehaviour
 
     public GameObject target;
 
-    private Assignable building;
+    private Assignable assignable;
     private Production production;
     private Storage storage;
     private KeyForge keyForge;
     private Research research;
+    private Building building;
 
     private Villager villager;
 
@@ -45,13 +46,21 @@ public class StatsDisplay : MonoBehaviour
                         "Fth: " + villager.Fth;
                     break;
 
+                case "Phantom":
+                    building = target.GetComponent<Building>();
+
+                    stats.text = "Stats: \n" + "Current Request: " + building.request.type +
+                        "\n" + "Current Amount Needed: " + building.request.count +
+                        "\n" + "Building: " + building.building.name;
+                    break;
+
                 case "Building":
 
-                    building = target.GetComponent<Assignable>();
+                    assignable = target.GetComponent<Assignable>();
 
-                    name.text = "Name: " + building.name;
+                    name.text = "Name: " + assignable.name;
 
-                    switch (building.type)
+                    switch (assignable.type)
                     {
                         case "Gather":
 
@@ -133,6 +142,18 @@ public class StatsDisplay : MonoBehaviour
                             {
                                 stats.text = "Stats: \n" + "Current Research: " + research.progress[research.index].name +
                                 "\n" + "Current Worker: None";
+                            }
+                            break;
+
+                        case "Buff":
+
+                            if (assignable.stats != null)
+                            {
+                                stats.text = "Stats: \n" + "Current Worker: " + assignable.stats.villagerName;
+                            }
+                            else
+                            {
+                                stats.text = "Stats: \n" + "Current Worker: None";
                             }
                             break;
                     }

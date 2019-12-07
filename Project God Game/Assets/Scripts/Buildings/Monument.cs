@@ -8,6 +8,11 @@ public class Monument : Assignable
 
     private int productionRate;
 
+    private void Start()
+    {
+        type = "Buff";
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Altar") && assigned)

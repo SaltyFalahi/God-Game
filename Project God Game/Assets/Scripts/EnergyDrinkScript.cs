@@ -8,16 +8,12 @@ public class EnergyDrinkScript : MonoBehaviour
     //public GameObject liquidParticle;
     ParticleSystem ps;
     LayerMask colLayer;
+
     void Start()
     {
-
-       
-            ps = GetComponentInChildren<ParticleSystem>();
-  
-       
+        ps = GetComponentInChildren<ParticleSystem>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         dotProduct = Vector3.Dot(Vector3.up, transform.up);

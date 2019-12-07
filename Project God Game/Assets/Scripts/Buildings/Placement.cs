@@ -6,8 +6,6 @@ public class Placement : MonoBehaviour
 {
     public GameObject phantom;
 
-    public Transform point;
-
     public Rigidbody rb;
 
     public GridObject grid;
@@ -34,7 +32,7 @@ public class Placement : MonoBehaviour
             {
                 rb.isKinematic = true;
 
-                phantom.transform.position = UnitPosition(point.position).nodeWorldPos;
+                phantom.transform.position = UnitPosition(transform.position).nodeWorldPos;
 
                 building.placed = true;
 
