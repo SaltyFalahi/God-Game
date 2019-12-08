@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b89403e1e2d634b982fed80bc299fc, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  gridWorldSize: {x: 2000, y: 2000}
-  nodeRadius: 50
-  nodeDiameter: 100
-  gridSizeX: 20
-  gridSizeY: 20
+  gridWorldSize: {x: 200, y: 200}
+  nodeRadius: 2.5
+  nodeDiameter: 5
+  gridSizeX: 40
+  gridSizeY: 40
