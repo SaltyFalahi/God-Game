@@ -7,13 +7,14 @@ public class EnergyDrinkScript : MonoBehaviour
     float dotProduct;
     //public GameObject liquidParticle;
     ParticleSystem ps;
-    LayerMask colLayer;
+    GameObject particleGO;
+    public LayerMask colLayer;
     void Start()
     {
 
-       
+            particleGO = transform.GetChild(0).gameObject;
             ps = GetComponentInChildren<ParticleSystem>();
-  
+            
        
     }
 
@@ -26,6 +27,11 @@ public class EnergyDrinkScript : MonoBehaviour
             if (ps != null)
             {
                 ps.Play();
+                RaycastHit hit;
+                if (Physics.BoxCast(particleGO.transform.position, Vector3.one/6, Vector3.down, out hit, Quaternion.identity, 50, colLayer))
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                }
             }
             else
             {
@@ -43,10 +49,6 @@ public class EnergyDrinkScript : MonoBehaviour
                 ps = GetComponentInChildren<ParticleSystem>();
             }
         }
-        RaycastHit hit;
-        if(Physics.BoxCast(transform.position, Vector3.one, Vector3.down,out hit ,Quaternion.identity, 50, colLayer)) 
-        {
-
-        }
+    
     }
 }
