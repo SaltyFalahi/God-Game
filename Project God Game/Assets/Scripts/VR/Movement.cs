@@ -18,8 +18,6 @@ public class Movement : MonoBehaviour
     float handDist;
     float pastHandDist;
     float totalHandDist;
-    float currentLHandPos;
-    float currentRHandPos;
         
     // Start is called before the first frame update
     void Start()
@@ -76,7 +74,7 @@ public class Movement : MonoBehaviour
             }
         }
 
-        /*if (Input.GetButton("XRI_Right_TriggerButton"))
+        if (Input.GetButton("XRI_Right_TriggerButton"))
         {
             currentHandPos = rightHand.position;
 
@@ -88,9 +86,9 @@ public class Movement : MonoBehaviour
 
                 transform.Translate(direction * Time.deltaTime * speed);
 
-                pastHandPos = leftHand.position;
+                pastHandPos = rightHand.position;
                 timer = .01f;
             }
-        }*/
+        }
     }
 }
