@@ -8,7 +8,6 @@ public class TargetingController : MonoBehaviour
 
     public List<GameObject> enemies = new List<GameObject>();
 
-    // Update is called once per frame
     void Update()
     {
         float distance = Mathf.Infinity;

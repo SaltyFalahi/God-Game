@@ -77,6 +77,27 @@ public class AStar : MonoBehaviour
         if (transform.position == finalPath[index].nodeWorldPos)
         {
             index++;
+
+            Vector3 vectVelocity = Vector3.Normalize(building.position - transform.position) * usedSpeed;
+
+            vectVelocity = new Vector3(vectVelocity.x, 0, vectVelocity.z);
+
+            Vector3 mySteering = vectVelocity - myRb.velocity;
+
+            Vector3.ClampMagnitude(mySteering, maxForce);
+
+            myRb.AddForce(mySteering);
+
+            if (RangeCheck(attackRange))
+            {
+                countdown -= Time.deltaTime;
+
+                if (countdown <= 0)
+                {
+                    building.SendMessage("Damage", damage);
+                    countdown = timer;
+                }
+            }
         }
         else
         {
@@ -143,12 +164,12 @@ public class AStar : MonoBehaviour
                     continue;
                 }
 
-                int newMoveCostToNeighbor = currentNode.gCost + getDist(currentNode, neighbor);
+                int newMoveCostToNeighbor = currentNode.gCost + GetDist(currentNode, neighbor);
 
                 if (newMoveCostToNeighbor < neighbor.gCost || !openNode.Contains(neighbor))
                 {
                     neighbor.gCost = newMoveCostToNeighbor;
-                    neighbor.hCost = getDist(neighbor, targetNode);
+                    neighbor.hCost = GetDist(neighbor, targetNode);
 
                     neighbor.parent = currentNode;
 
@@ -190,7 +211,7 @@ public class AStar : MonoBehaviour
         finalPath = path;
     }
 
-    int getDist(Node nodeA, Node nodeB)
+    int GetDist(Node nodeA, Node nodeB)
     {
         int distX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
         int distY = Mathf.Abs(nodeA.gridY - nodeB.gridY);

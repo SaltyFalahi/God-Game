@@ -5,12 +5,13 @@ using UnityEngine;
 public class VillagerSpawning : MonoBehaviour
 {
     public GameObject[] villagers;
+    public GameObject[] villagerModels;
 
     public IntVariable food;
 
-    public GameObject prefab;
-
     public Transform spawn;
+
+    private GameObject prefab;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class VillagerSpawning : MonoBehaviour
 
         if (food.Value >= (2 + Mathf.Pow(villagers.Length, 1.5f)))
         {
+            prefab = villagerModels[Random.Range(0, villagerModels.Length)];
+
             Instantiate(prefab, spawn);
 
             food.Value -= (int)(2 + Mathf.Pow(villagers.Length, 1.5f));

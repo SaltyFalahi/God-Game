@@ -6,12 +6,16 @@ TagManager:
   tags:
   - Villager
   - Building
+  - Wooden Key
   - Unwalkable
   - Arrow
   - Bomb
   - Enemy
   - Freeze
   - Slow
+  - Golden Key
+  - Iron Key
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -23,18 +27,18 @@ TagManager:
   - 
   - PostProcessing
   - Phone
+  - Hand
+  - 
+  - sdf
+  - sdf
+  - 
   - Unwalkable
   - collisionLayer
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - sdf
+  - pickables
   - 
   - 
   - 

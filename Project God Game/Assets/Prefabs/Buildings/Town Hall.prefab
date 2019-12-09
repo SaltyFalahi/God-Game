@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4159054908676596054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479116112631033275}
+  - component: {fileID: 7299177741175760725}
+  - component: {fileID: 2910864175266636553}
+  - component: {fileID: 4523822723022672590}
+  - component: {fileID: 7152182923211143923}
+  - component: {fileID: 7304367223518460143}
+  - component: {fileID: 2041614909677114814}
+  - component: {fileID: 839350082}
+  m_Layer: 0
+  m_Name: Town Hall
+  m_TagString: Building
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &479116112631033275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.23, y: 14.28, z: -52.22}
+  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7299177741175760725
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2910864175266636553
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!136 &4523822723022672590
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &7152182923211143923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd74a56b965faf4b97174b4bea42a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  villagers: []
+  villagerModels:
+  - {fileID: 5867135627819890662, guid: 079adf6d7fa476e4ab70c99271a6afe5, type: 3}
+  - {fileID: 5572776136798558104, guid: fa608e57e092e514da02dbbbd0d7bfbd, type: 3}
+  - {fileID: 7545582087576727615, guid: d4b54523322f44a4ca7c77a0a00c2517, type: 3}
+  - {fileID: 911239689523881786, guid: 9c560aa2bb9bd1545a8ed91dc4b7caf8, type: 3}
+  - {fileID: 3013328174481454384, guid: 6047965c7626dd64e951a57133fb56d7, type: 3}
+  - {fileID: 6680659060734753043, guid: 9ba04c0b37661544e82d94233c6da064, type: 3}
+  food: {fileID: 11400000, guid: 6fada6fb121082740881063722cf0307, type: 2}
+  spawn: {fileID: 479116112631033275}
+--- !u!114 &7304367223518460143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4f718a039068c4fb2680672eb649f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  type: 
+  assigned: 0
+  sm: {fileID: 2041614909677114814}
+  gatheredWood: {fileID: 11400000, guid: eccf66ed8b51afa47b33eaf223419916, type: 2}
+  gatheredStone: {fileID: 11400000, guid: 55588c65e83b22343a1e475ef303b0c9, type: 2}
+  gatheredIron: {fileID: 11400000, guid: dcad849e9a5539a4c8ed38cae9b55576, type: 2}
+  gatheredFood: {fileID: 11400000, guid: 545a81fa97ab2a64a98cb8e09dea6d45, type: 2}
+  storedWood: {fileID: 11400000, guid: 7520aa8085d8f4f498cae91470a5836e, type: 2}
+  storedStone: {fileID: 11400000, guid: 748ebb6fd0a9dee4195cfbac2b34308a, type: 2}
+  storedIron: {fileID: 11400000, guid: b6ccfee1fb181744296441e14a565489, type: 2}
+  storedFood: {fileID: 11400000, guid: 6fada6fb121082740881063722cf0307, type: 2}
+  storageCapacity: 10
+  storageRate: 0
+  totalCount: 0
+  lvl: 1
+  woodCount: 0
+  stoneCount: 0
+  ironCount: 0
+  foodCount: 0
+  countdown: 0
+  full: 0
+--- !u!114 &2041614909677114814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3364a65946ff744489188673b59101f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storages: []
+  requests: []
+  totalStorage: 0
+--- !u!114 &839350082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4159054908676596054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15753f44d48a3ab4c945572b69fb7cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources:
+  - {fileID: 11400000, guid: 545a81fa97ab2a64a98cb8e09dea6d45, type: 2}
+  - {fileID: 11400000, guid: dcad849e9a5539a4c8ed38cae9b55576, type: 2}
+  - {fileID: 11400000, guid: 55588c65e83b22343a1e475ef303b0c9, type: 2}
+  - {fileID: 11400000, guid: eccf66ed8b51afa47b33eaf223419916, type: 2}
+  - {fileID: 11400000, guid: 6fada6fb121082740881063722cf0307, type: 2}
+  - {fileID: 11400000, guid: b6ccfee1fb181744296441e14a565489, type: 2}
+  - {fileID: 11400000, guid: 748ebb6fd0a9dee4195cfbac2b34308a, type: 2}
+  - {fileID: 11400000, guid: 7520aa8085d8f4f498cae91470a5836e, type: 2}
+  - {fileID: 11400000, guid: 55caa2f798592af409b42300560e08a4, type: 2}
+  requests:
+  - {fileID: 11400000, guid: cc5b70b8754566c4f948195b5511a90f, type: 2}

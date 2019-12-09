@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class KeyForge : MonoBehaviour
+public class KeyForge : Assignable
 {
     public List<Progression> progress;
 
@@ -17,16 +17,20 @@ public class KeyForge : MonoBehaviour
     {
         RequestResource(progress[index].count, progress[index].name);
         index++;
+        type = "Keyforge";
     }
 
     void Update()
     {
-        if(request.completed && index < progress.Count)
+        if (assigned)
         {
-            BuildKey(progress[index - 1].obj);
-            RequestResource(progress[index].count, progress[index].name);
-            index++;
-            request.completed = false;
+            if (request.completed && index < progress.Count)
+            {
+                BuildKey(progress[index - 1].obj);
+                RequestResource(progress[index].count, progress[index].name);
+                index++;
+                request.completed = false;
+            }
         }
     }
 
