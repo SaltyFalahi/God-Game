@@ -19,13 +19,11 @@ public class Movement : MonoBehaviour
     float pastHandDist;
     float totalHandDist;
         
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("XRI_Left_TriggerButton") && Input.GetButton("XRI_Right_TriggerButton"))

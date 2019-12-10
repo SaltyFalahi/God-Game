@@ -6,7 +6,6 @@ public class UnlockChest : MonoBehaviour
 {
     public Animator anim;
 
-    public GameObject key;
     public GameObject building;
 
     public Transform stored;

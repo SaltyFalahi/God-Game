@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-6772886796938903610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6281914505423127473}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888435823535038602}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1888435823535038602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 5555407387993776955, guid: 13e94e37a76c462438d9073440744c48,
+    type: 3}
+  m_PrefabInstance: {fileID: 6281914505423127473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -6772886796938903610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: -4701826258543416539}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &-1127761134083880014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6281914505423127473}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: -4701826258543416539}
+  m_Layer: 0
+  m_Name: KeyForge (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &-4701826258543416539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6281914505423127473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -1127761134083880014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1888435823535038602}
+  m_Father: {fileID: 6673025820526208589}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6673025820036202233
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +124,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6673025820036202238}
-  - {fileID: 1888435823535038602}
+  - {fileID: -4701826258543416539}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,15 +184,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8684005bde67d984383efb3a683f6e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  type: 
+  assigned: 0
   progress:
   - obj: {fileID: 0}
     count: 10
     name: Wood
   - obj: {fileID: 0}
-    count: 20
+    count: 10
     name: Wood
   - obj: {fileID: 0}
-    count: 30
+    count: 20
     name: Wood
   - obj: {fileID: 0}
     count: 10
@@ -147,11 +212,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6673025820526208589}
     m_Modifications:
-    - target: {fileID: 5555407387994002449, guid: 13e94e37a76c462438d9073440744c48,
-        type: 3}
-      propertyPath: m_Name
-      value: KeyForge
-      objectReference: {fileID: 0}
     - target: {fileID: 5555407387993776955, guid: 13e94e37a76c462438d9073440744c48,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,11 +282,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5555407387994002449, guid: 13e94e37a76c462438d9073440744c48,
+        type: 3}
+      propertyPath: m_Name
+      value: KeyForge
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13e94e37a76c462438d9073440744c48, type: 3}
---- !u!4 &1888435823535038602 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5555407387993776955, guid: 13e94e37a76c462438d9073440744c48,
-    type: 3}
-  m_PrefabInstance: {fileID: 6281914505423127473}
-  m_PrefabAsset: {fileID: 0}

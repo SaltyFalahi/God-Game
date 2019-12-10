@@ -26,12 +26,8 @@ public class Placement : MonoBehaviour
 
         if (!held)
         {
-            rb.isKinematic = false;
-
             if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10))
             {
-                rb.isKinematic = true;
-
                 phantom.transform.position = UnitPosition(transform.position).nodeWorldPos;
 
                 building.placed = true;
