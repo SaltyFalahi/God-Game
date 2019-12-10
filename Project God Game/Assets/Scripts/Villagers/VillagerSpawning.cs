@@ -9,7 +9,7 @@ public class VillagerSpawning : MonoBehaviour
 
     public IntVariable food;
 
-    public Transform spawn;
+    public Transform[] spawn;
 
     private GameObject prefab;
 
@@ -26,7 +26,7 @@ public class VillagerSpawning : MonoBehaviour
         {
             prefab = villagerModels[Random.Range(0, villagerModels.Length)];
 
-            Instantiate(prefab, spawn);
+            Instantiate(prefab, spawn[Random.Range(0, spawn.Length)]);
 
             food.Value -= (int)(2 + Mathf.Pow(villagers.Length, 1.5f));
         }
