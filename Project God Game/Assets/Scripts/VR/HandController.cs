@@ -24,8 +24,10 @@ public class HandController : MonoBehaviour
 
     void Update()
     {
+        
         if (pickables.Count > 0)
         {
+            Debug.Log(pickables[0]);
             if (pickables[0].gameObject.GetComponentInParent<Pickable>())
             {
                 if (emptyHanded)

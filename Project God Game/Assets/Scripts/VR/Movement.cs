@@ -55,38 +55,38 @@ public class Movement : MonoBehaviour
             pastHandDist = Vector3.Distance(leftHand.position, rightHand.position);
         }
 
-        if (Input.GetButton("XRI_Left_TriggerButton"))
-        {
-            currentHandPos = leftHand.position;
+        //if (Input.GetButton("XRI_Left_TriggerButton"))
+        //{
+        //    currentHandPos = leftHand.position;
 
-            timer -= Time.deltaTime;
+        //    timer -= Time.deltaTime;
 
-            if (timer <= 0)
-            {
-                direction = (pastHandPos - currentHandPos).normalized;
+        //    if (timer <= 0)
+        //    {
+        //        direction = (pastHandPos - currentHandPos).normalized;
 
-                transform.Translate(direction * Time.deltaTime * speed);
+        //        transform.Translate(direction * Time.deltaTime * speed);
 
-                pastHandPos = leftHand.position;
-                timer = .01f;
-            }
-        }
+        //        pastHandPos = leftHand.position;
+        //        timer = .01f;
+        //    }
+        //}
 
-        if (Input.GetButton("XRI_Right_TriggerButton"))
-        {
-            currentHandPos = rightHand.position;
+        //if (Input.GetButton("XRI_Right_TriggerButton"))
+        //{
+        //    currentHandPos = rightHand.position;
 
-            timer -= Time.deltaTime;
+        //    timer -= Time.deltaTime;
 
-            if (timer <= 0)
-            {
-                direction = (pastHandPos - currentHandPos).normalized;
+        //    if (timer <= 0)
+        //    {
+        //        direction = (pastHandPos - currentHandPos).normalized;
 
-                transform.Translate(direction * Time.deltaTime * speed);
+        //        transform.Translate(direction * Time.deltaTime * speed);
 
-                pastHandPos = rightHand.position;
-                timer = .01f;
-            }
-        }
+        //        pastHandPos = rightHand.position;
+        //        timer = .01f;
+        //    }
+        //}
     }
 }

@@ -57,8 +57,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856393663606853826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.147846, y: 16.34, z: -22.723389}
+  m_LocalRotation: {x: 0.6501298, y: -0.6887307, z: -0.089138806, w: 0.30827844}
+  m_LocalPosition: {x: -7.500004, y: 4.418137, z: -87.5}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 5856393663153670260}
@@ -137,10 +137,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5856393663606853831}
     m_Modifications:
-    - target: {fileID: 142884, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
-      propertyPath: m_Name
-      value: SM_Env_House_Rocks_Large_01
-      objectReference: {fileID: 0}
     - target: {fileID: 402814, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -196,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 402814, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 142884, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
+      propertyPath: m_Name
+      value: SM_Env_House_Rocks_Large_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}

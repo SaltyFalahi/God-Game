@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -526,12 +526,12 @@ PrefabInstance:
     - target: {fileID: 5634213948970495757, guid: 8ca1fa951d8d9824d87f27f85d504b3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 89.1
+      value: 42.5
       objectReference: {fileID: 0}
     - target: {fileID: 5634213948970495757, guid: 8ca1fa951d8d9824d87f27f85d504b3a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.2
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 5634213948970495757, guid: 8ca1fa951d8d9824d87f27f85d504b3a,
         type: 3}
@@ -1236,16 +1236,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5867135627819890684, guid: 079adf6d7fa476e4ab70c99271a6afe5,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5867135627819890684, guid: 079adf6d7fa476e4ab70c99271a6afe5,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 451875438988529256, guid: 079adf6d7fa476e4ab70c99271a6afe5,
         type: 3}
       propertyPath: m_Layer
@@ -1591,8 +1581,48 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 5867135627819890684, guid: 079adf6d7fa476e4ab70c99271a6afe5,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867135627819890684, guid: 079adf6d7fa476e4ab70c99271a6afe5,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079adf6d7fa476e4ab70c99271a6afe5, type: 3}
+--- !u!1 &2018463971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 194883656595923657}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018463972}
+  m_Layer: 0
+  m_Name: Cube (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2018463972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 194883656595923657}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018463971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &194883656595923657
 PrefabInstance:
   m_ObjectHideFlags: 0

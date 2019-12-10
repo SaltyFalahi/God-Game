@@ -17,10 +17,7 @@ public class Assignment : MonoBehaviour
 
     void Update()
     {
-        if(villager != null && free)
-        {
-            villager.transform.position = workPos.position;
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +29,9 @@ public class Assignment : MonoBehaviour
             if (free)
             {
                 villager = other.gameObject;
+
+                villager.transform.position = workPos.position;
+
                 GetComponent<Assignable>().stats = villager.GetComponent<Villager>();
                 GetComponent<Assignable>().assigned = true;
             }

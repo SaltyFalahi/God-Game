@@ -137,43 +137,41 @@ public class Storage : Assignable
         }
     }
 
-    public int Remove(string stored)
+    public void Remove(string stored)
     {
         switch (stored)
         {
             case "Wood":
                 if (storedWood.Value > 0)
                 {
-                    storedWood.Value -= storageRate;
-                    woodCount -= storageRate;
+                    storedWood.Value--;
+                    woodCount--;
                 }
                 break;
 
             case "Stone":
                 if (storedStone.Value > 0)
                 {
-                    storedStone.Value -= storageRate;
-                    stoneCount -= storageRate;
+                    storedStone.Value--;
+                    stoneCount--;
                 }
                 break;
 
             case "Iron":
                 if (storedIron.Value > 0)
                 {
-                    storedIron.Value -= storageRate;
-                    ironCount -= storageRate;
+                    storedIron.Value--;
+                    ironCount--;
                 }
                 break;
 
             case "Food":
                 if (storedFood.Value > 0)
                 {
-                    storedFood.Value -= storageRate;
-                    foodCount -= storageRate;
+                    storedFood.Value--;
+                    foodCount--;
                 }
                 break;
         }
-
-        return storageRate;
     }
 }

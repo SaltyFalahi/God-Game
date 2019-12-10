@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeker: {fileID: 0}
-  target: {fileID: 1892214283229454522, guid: a76dadee7019d4741905079b7355455f, type: 3}
+  target: {fileID: 0}
   building: {fileID: 8743607588449002663, guid: 9d37ed106d9b9af4f8caa518944764b7,
     type: 3}
   grid: {fileID: 11400000, guid: a7e80ce57444f3e4fb41d03342f84541, type: 2}

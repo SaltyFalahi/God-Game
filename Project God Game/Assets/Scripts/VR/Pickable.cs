@@ -33,6 +33,7 @@ public class Pickable : MonoBehaviour
             rb.isKinematic = true;
         }
     }
+
     public virtual void OnHandTriggerReleased() 
     {
         transform.SetParent(null);

@@ -19,6 +19,7 @@ public class ScriptableObjectsInitializer : MonoBehaviour
         {
             requests[i].count = 0;
             requests[i].type = null;
+            requests[i].completed = false;
         }
     }
 }

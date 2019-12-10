@@ -27,17 +27,20 @@ public class Building : MonoBehaviour
     {
         if (placed)
         {
-            if (request.completed && index < progress.Count)
+            if (request.completed)
             {
-                RequestResource(progress[index].count, progress[index].name);
                 index++;
-                request.completed = false;
-            }
 
-            if (request.completed && index == progress.Count)
-            {
-                Debug.Log("Completed");
-                Build();
+                if(index < progress.Count)
+                {
+                    RequestResource(progress[index].count, progress[index].name);
+                    request.completed = false;
+                }
+                else
+                {
+                    Debug.Log("Completed");
+                    Build();
+                }
             }
         }
     }
@@ -53,8 +56,8 @@ public class Building : MonoBehaviour
     {
         Instantiate(building);
 
-        building.transform.position = placement.phantom.transform.position;
-        building.transform.rotation = placement.phantom.transform.rotation;
+        building.transform.position = transform.position;
+        building.transform.rotation = transform.rotation;
 
         Destroy(this.gameObject);
     }

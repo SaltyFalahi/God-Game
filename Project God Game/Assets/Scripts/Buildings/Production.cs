@@ -63,6 +63,7 @@ public class Production : Assignable
             {
                 productionRate = (lvl + productionStat) / 2;
                 resource.Value += productionRate;
+                Debug.Log("Producing");
                 timer = countdown;
             }
         }

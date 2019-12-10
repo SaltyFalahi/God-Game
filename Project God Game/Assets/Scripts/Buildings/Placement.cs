@@ -24,7 +24,7 @@ public class Placement : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (!held)
+        if (!held && !building.placed)
         {
             if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10))
             {
@@ -33,7 +33,6 @@ public class Placement : MonoBehaviour
                 building.placed = true;
 
                 building.RequestResource(building.progress[0].count, building.progress[0].name);
-                building.index++;
             }
         }
     }

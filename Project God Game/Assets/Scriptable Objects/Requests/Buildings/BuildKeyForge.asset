@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BuildKeyForge
   m_EditorClassIdentifier: 
   completed: 0
-  count: 0
-  type: 
+  count: 10
+  type: Wood

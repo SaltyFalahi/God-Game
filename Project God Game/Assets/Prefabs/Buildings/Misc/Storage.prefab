@@ -57,8 +57,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321062356794338400}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.84, y: 12.64, z: -15.78318}
+  m_LocalRotation: {x: -0.00025317073, y: -0.95456946, z: -0.26030287, w: 0.14505038}
+  m_LocalPosition: {x: 27.5, y: 4.591363, z: -82.5}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 321062356170110166}
@@ -144,6 +144,7 @@ MonoBehaviour:
   foodCount: 0
   countdown: 0
   full: 0
+  townhall: 0
 --- !u!1001 &1696131140
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,11 +22,15 @@ public class VillagerSpawning : MonoBehaviour
     {
         villagers = GameObject.FindGameObjectsWithTag("Villager");
 
+        Debug.Log(2 + Mathf.Pow(villagers.Length, 1.5f));
+
         if (food.Value >= (2 + Mathf.Pow(villagers.Length, 1.5f)))
         {
             prefab = villagerModels[Random.Range(0, villagerModels.Length)];
 
-            Instantiate(prefab, spawn[Random.Range(0, spawn.Length)]);
+            Instantiate(prefab);
+
+            prefab.transform.position = spawn[Random.Range(0, spawn.Length)].transform.position;
 
             food.Value -= (int)(2 + Mathf.Pow(villagers.Length, 1.5f));
         }
