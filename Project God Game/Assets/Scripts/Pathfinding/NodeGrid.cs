@@ -34,17 +34,4 @@ public class NodeGrid : MonoBehaviour
             }
         }
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireCube(transform.position, new Vector3(grid.gridWorldSize.x, 1, grid.gridWorldSize.y));
-
-    //    if (grid != null)
-    //    {
-    //        foreach (Node n in grid.grid)
-    //        {
-    //            Gizmos.DrawCube(n.nodeWorldPos, Vector3.one * (grid.nodeDiameter - 0.1f));
-    //        }
-    //    }
-    //}
 }

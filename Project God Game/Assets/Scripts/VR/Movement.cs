@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("XRI_Left_TriggerButton") && Input.GetButton("XRI_Right_TriggerButton"))
+        if (Input.GetButton("XRI_Left_TriggerButton") && Input.GetButton("XRI_Right_TriggerButton") && head.position.y >= 10)
         {
             handDist = Vector3.Distance(leftHand.position, rightHand.position);
 
@@ -55,7 +55,7 @@ public class Movement : MonoBehaviour
             pastHandDist = Vector3.Distance(leftHand.position, rightHand.position);
         }
 
-        //if (Input.GetButton("XRI_Left_TriggerButton"))
+        //if (Input.GetButton("XRI_Left_GripButton"))
         //{
         //    currentHandPos = leftHand.position;
 
@@ -72,7 +72,7 @@ public class Movement : MonoBehaviour
         //    }
         //}
 
-        //if (Input.GetButton("XRI_Right_TriggerButton"))
+        //if (Input.GetButton("XRI_Right_GripButton"))
         //{
         //    currentHandPos = rightHand.position;
 
