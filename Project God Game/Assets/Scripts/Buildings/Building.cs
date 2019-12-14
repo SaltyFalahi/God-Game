@@ -21,6 +21,7 @@ public class Building : MonoBehaviour
     void Start()
     {
         placement = GetComponent<Placement>();
+        sm = FindObjectOfType<StorageManager>();
     }
 
     void Update()
@@ -56,8 +57,8 @@ public class Building : MonoBehaviour
     {
         Instantiate(building);
 
-        building.transform.position = transform.position;
-        building.transform.rotation = transform.rotation;
+        building.transform.position = placement.phantom.transform.position;
+        building.transform.rotation = placement.phantom.transform.rotation;
 
         Destroy(this.gameObject);
     }

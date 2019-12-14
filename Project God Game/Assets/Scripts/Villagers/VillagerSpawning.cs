@@ -22,8 +22,6 @@ public class VillagerSpawning : MonoBehaviour
     {
         villagers = GameObject.FindGameObjectsWithTag("Villager");
 
-        Debug.Log(2 + Mathf.Pow(villagers.Length, 1.5f));
-
         if (food.Value >= (2 + Mathf.Pow(villagers.Length, 1.5f)))
         {
             prefab = villagerModels[Random.Range(0, villagerModels.Length)];

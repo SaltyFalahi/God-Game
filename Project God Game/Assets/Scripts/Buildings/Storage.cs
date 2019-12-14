@@ -27,12 +27,12 @@ public class Storage : Assignable
     public int ironCount;
     public int foodCount;
 
-    public float countdown;
+    public float storageTimer;
 
     public bool full;
     public bool townhall;
 
-    private float timer;
+    private float storageCountdown;
 
     void Start()
     {
@@ -44,11 +44,12 @@ public class Storage : Assignable
     {
         if (assigned && !townhall)
         {
-            timer -= Time.deltaTime;
+            storageCountdown -= Time.deltaTime;
+            countdown -= Time.deltaTime;
 
             totalCount = woodCount + stoneCount + ironCount + foodCount;
 
-            if (timer <= 0)
+            if (storageCountdown <= 0)
             {
                 storageRate = (lvl + stats.Str) / 2;
 
@@ -64,16 +65,24 @@ public class Storage : Assignable
                     Store("Iron");
                     Store("Food");
                 }
-                timer = countdown;
+                storageCountdown = storageTimer;
+            }
+
+            if (countdown <= 0)
+            {
+                lvl++;
+                stats.Lvl++;
+                stats.Int++;
+                countdown = timer;
             }
         }
         else if (townhall)
         {
-            timer -= Time.deltaTime;
+            storageCountdown -= Time.deltaTime;
 
             totalCount = woodCount + stoneCount + ironCount + foodCount;
 
-            if (timer <= 0)
+            if (storageCountdown <= 0)
             {
                 storageRate = 1;
 
@@ -89,10 +98,26 @@ public class Storage : Assignable
                     Store("Iron");
                     Store("Food");
                 }
-                timer = countdown;
+                storageCountdown = storageTimer;
             }
         }
         
+    }
+
+    private void Dead()
+    {
+        if (!townhall)
+        {
+            storedWood.Value -= woodCount;
+            storedStone.Value -= stoneCount;
+            storedIron.Value -= ironCount;
+            storedFood.Value -= foodCount;
+            Destroy(this);
+        }
+        else
+        {
+            //Application.Quit();
+        }
     }
 
     public void Store(string stored)

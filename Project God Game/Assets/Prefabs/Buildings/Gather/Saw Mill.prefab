@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 5670936656013278093}
   - component: {fileID: 5930656597608787621}
   - component: {fileID: 4512317473854036312}
+  - component: {fileID: -5099936979938024035}
   m_Layer: 0
   m_Name: Saw Mill
   m_TagString: Building
@@ -234,12 +235,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  type: 
+  timer: 600
   assigned: 0
   mainStat: 0
   resource: {fileID: 11400000, guid: eccf66ed8b51afa47b33eaf223419916, type: 2}
   productionRate: 0
   lvl: 1
-  countdown: 2
+  productionTimer: 0
 --- !u!114 &4512317473854036312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +258,19 @@ MonoBehaviour:
   villager: {fileID: 0}
   workPos: {fileID: 3526074002771312515}
   free: 1
+--- !u!114 &-5099936979938024035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3005817597660727869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8515debd9e6f74c42af33ed5e5957e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!1 &3244934718205877121
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8344404503570556469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.159, y: -0.375, z: 0.482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4243282758903833889}

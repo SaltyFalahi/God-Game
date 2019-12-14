@@ -7,6 +7,7 @@ public class UnlockChest : MonoBehaviour
     public Animator anim;
 
     public GameObject building;
+    public GameObject prefab;
 
     public Transform stored;
 
@@ -15,13 +16,15 @@ public class UnlockChest : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
-        building.transform.position = stored.position;
     }
 
     void Update()
     {
-        
+        if (building == null)
+        {
+            building = Instantiate(prefab);
+            building.transform.position = stored.position;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +32,8 @@ public class UnlockChest : MonoBehaviour
         if (other.gameObject.CompareTag(keyType))
         {
             anim.SetBool("Unlocked", true);
+            gameObject.GetComponent<Pickable>().enabled = true;
+            Destroy(other);
         }
     }
 }

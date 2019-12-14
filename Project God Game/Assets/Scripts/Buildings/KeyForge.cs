@@ -11,6 +11,8 @@ public class KeyForge : Assignable
 
     public Request request;
 
+    public int lvl = 1;
+
     private int index = 0;
 
     void Start()
@@ -31,12 +33,27 @@ public class KeyForge : Assignable
                 index++;
                 request.completed = false;
             }
+
+            countdown -= Time.deltaTime;
+
+            if (countdown <= 0)
+            {
+                lvl++;
+                stats.Lvl++;
+                stats.Fth++;
+                countdown = timer;
+            }
         }
+    }
+
+    private void Dead()
+    {
+        Destroy(this);
     }
 
     public void RequestResource(int value, string type)
     {
-        request.count = value;
+        request.count = value - (lvl + stats.Fth) / 2;
         request.type = type;
         sm.requests.Add(request);
     }

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9185777071979781696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1106682317047103828, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wooden Chest (Stone Quarry) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -41.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -226.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106682317047009972, guid: ca716559dc213eb45a811a9a6141993e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656977854, guid: ca716559dc213eb45a811a9a6141993e, type: 3}
+      propertyPath: building
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656977854, guid: ca716559dc213eb45a811a9a6141993e, type: 3}
+      propertyPath: keyType
+      value: Wooden Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656977854, guid: ca716559dc213eb45a811a9a6141993e, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 3675576254469313374, guid: 96c8c8ee77497f240b4231674ca76787,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca716559dc213eb45a811a9a6141993e, type: 3}

@@ -9,6 +9,11 @@ public class StorageManager : MonoBehaviour
 
     public int totalStorage;
 
+    private void Awake()
+    {
+       
+    }
+
     void Update()
     {
         totalStorage = storages.Count * 50;

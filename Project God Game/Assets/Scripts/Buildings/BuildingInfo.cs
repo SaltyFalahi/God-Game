@@ -8,20 +8,26 @@ public class BuildingInfo : MonoBehaviour
 
     float myHealth;
 
-    // Start is called before the first frame update
     void Start()
     {
         myHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (myHealth <= 0)
+        {
+            SendMessage("Dead");
+        }
     }
 
     void Damage(int damage)
     {
         myHealth -= damage;
+    }
+
+    void Repair(int health)
+    {
+        myHealth += health;
     }
 }

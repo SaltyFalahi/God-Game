@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321062356170110161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.95, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 321062356794338405}
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 321062356794338426}
   - component: {fileID: 321062356794338427}
   - component: {fileID: 5466464063957439958}
+  - component: {fileID: -8656600701551278068}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Building
@@ -57,7 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321062356794338400}
-  m_LocalRotation: {x: -0.00025317073, y: -0.95456946, z: -0.26030287, w: 0.14505038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 27.5, y: 4.591363, z: -82.5}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
@@ -77,8 +78,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9, y: 1, z: 1.9}
-  m_Center: {x: 0, y: 0.1, z: 0}
+  m_Size: {x: 2.4, y: 1.3, z: 2.4}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!54 &321062356794338426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   type: 
+  timer: 600
   assigned: 0
   sm: {fileID: 0}
   gatheredWood: {fileID: 11400000, guid: eccf66ed8b51afa47b33eaf223419916, type: 2}
@@ -142,9 +144,22 @@ MonoBehaviour:
   stoneCount: 0
   ironCount: 0
   foodCount: 0
-  countdown: 0
+  storageTimer: 0
   full: 0
   townhall: 0
+--- !u!114 &-8656600701551278068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321062356794338400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8515debd9e6f74c42af33ed5e5957e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!1001 &1696131140
 PrefabInstance:
   m_ObjectHideFlags: 0

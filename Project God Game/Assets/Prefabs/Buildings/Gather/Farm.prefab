@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263683730059035499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.006, y: -0.225, z: -0.064}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 263683730508684255}
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 263683730508684224}
   - component: {fileID: 263683730508684252}
   - component: {fileID: 263683730508684225}
+  - component: {fileID: 2847223247544448192}
   m_Layer: 0
   m_Name: Farm
   m_TagString: Building
@@ -109,12 +110,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   type: 
+  timer: 600
   assigned: 0
   mainStat: 2
   resource: {fileID: 11400000, guid: 545a81fa97ab2a64a98cb8e09dea6d45, type: 2}
   productionRate: 0
   lvl: 1
-  countdown: 2
+  productionTimer: 0
 --- !u!114 &263683730508684225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +132,19 @@ MonoBehaviour:
   villager: {fileID: 0}
   workPos: {fileID: 263683730059035500}
   free: 1
+--- !u!114 &2847223247544448192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263683730508684250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8515debd9e6f74c42af33ed5e5957e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!1 &1106526823028357479
 GameObject:
   m_ObjectHideFlags: 0

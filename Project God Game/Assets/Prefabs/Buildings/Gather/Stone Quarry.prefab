@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856393663153670259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: -0.156, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5856393663606853831}
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5856393663606853848}
   - component: {fileID: 5856393663606853828}
   - component: {fileID: 5856393663606853849}
+  - component: {fileID: 2027251611761426767}
   m_Layer: 0
   m_Name: Stone Quarry
   m_TagString: Building
@@ -57,12 +58,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856393663606853826}
-  m_LocalRotation: {x: 0.6501298, y: -0.6887307, z: -0.089138806, w: 0.30827844}
-  m_LocalPosition: {x: -7.500004, y: 4.418137, z: -87.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 5856393663153670260}
-  - {fileID: 2463345177154062586}
+  - {fileID: 1929549716841735182}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,8 +78,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4, y: 0.5, z: 2.4}
-  m_Center: {x: 0, y: 0.06, z: 0}
+  m_Size: {x: 2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!54 &5856393663606853848
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -109,12 +110,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   type: 
+  timer: 600
   assigned: 0
   mainStat: 0
   resource: {fileID: 11400000, guid: 55588c65e83b22343a1e475ef303b0c9, type: 2}
   productionRate: 0
   lvl: 1
-  countdown: 2
+  productionTimer: 0
 --- !u!114 &5856393663606853849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +132,20 @@ MonoBehaviour:
   villager: {fileID: 0}
   workPos: {fileID: 5856393663153670260}
   free: 1
---- !u!1001 &2463345177154465156
+--- !u!114 &2027251611761426767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856393663606853826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8515debd9e6f74c42af33ed5e5957e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+--- !u!1001 &1929549716841333104
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -143,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 402814, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402814, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -199,9 +214,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d54a30c53628bf44bae8152c55a2a6a, type: 3}
---- !u!4 &2463345177154062586 stripped
+--- !u!4 &1929549716841735182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 402814, guid: 7d54a30c53628bf44bae8152c55a2a6a,
     type: 3}
-  m_PrefabInstance: {fileID: 2463345177154465156}
+  m_PrefabInstance: {fileID: 1929549716841333104}
   m_PrefabAsset: {fileID: 0}

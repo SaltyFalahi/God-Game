@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &693407433959431058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796531406732275625}
+  m_Layer: 0
+  m_Name: Work Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796531406732275625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693407433959431058}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21, y: 1.67, z: 0.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1435344375563877505}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2479468016029075222
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +43,8 @@ GameObject:
   - component: {fileID: 1766504276303578057}
   - component: {fileID: 1766504276303578100}
   - component: {fileID: 1766504276303578059}
+  - component: {fileID: -8285379983726261467}
+  - component: {fileID: 4643094858996100870}
   m_Layer: 0
   m_Name: Watch Tower
   m_TagString: Untagged
@@ -31,10 +63,8 @@ Transform:
   m_LocalPosition: {x: -20.765213, y: 8.12, z: -87.04268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1205922914325789364}
-  - {fileID: 7630953823961143525}
-  - {fileID: 4678493250501299808}
-  - {fileID: 3535371484265668948}
+  - {fileID: 9129254680356145097}
+  - {fileID: 796531406732275625}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -94,14 +124,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   type: 
+  timer: 600
   assigned: 0
   buffedRadius: 10
+  lvl: 1
+--- !u!114 &-8285379983726261467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479468016029075222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d28ecd5caf063e4e8da20019c1871e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  villager: {fileID: 0}
+  workPos: {fileID: 796531406732275625}
+  free: 0
+--- !u!114 &4643094858996100870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479468016029075222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8515debd9e6f74c42af33ed5e5957e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+--- !u!1 &7549176269564315912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9129254680356145097}
+  m_Layer: 0
+  m_Name: Watch Tower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9129254680356145097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549176269564315912}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1205922914325789364}
+  - {fileID: 7630953823961143525}
+  - {fileID: 4678493250501299808}
+  - {fileID: 3535371484265668948}
+  m_Father: {fileID: 1435344375563877505}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1205922914325643744
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1435344375563877505}
+    m_TransformParent: {fileID: 9129254680356145097}
     m_Modifications:
     - target: {fileID: 126512, guid: 7e5cb000499bd224984190a9051723e3, type: 3}
       propertyPath: m_Name
@@ -164,7 +258,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1435344375563877505}
+    m_TransformParent: {fileID: 9129254680356145097}
     m_Modifications:
     - target: {fileID: 164264, guid: 6ba4d52adf25745439f5f78d20e277b0, type: 3}
       propertyPath: m_Name
@@ -239,7 +333,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1435344375563877505}
+    m_TransformParent: {fileID: 9129254680356145097}
     m_Modifications:
     - target: {fileID: 164264, guid: 6ba4d52adf25745439f5f78d20e277b0, type: 3}
       propertyPath: m_Name
@@ -314,7 +408,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1435344375563877505}
+    m_TransformParent: {fileID: 9129254680356145097}
     m_Modifications:
     - target: {fileID: 126512, guid: 7e5cb000499bd224984190a9051723e3, type: 3}
       propertyPath: m_Name

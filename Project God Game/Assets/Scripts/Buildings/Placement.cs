@@ -28,7 +28,8 @@ public class Placement : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10))
             {
-                phantom.transform.position = UnitPosition(transform.position).nodeWorldPos;
+                phantom.transform.position = hit.point;
+                phantom.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
                 building.placed = true;
 
