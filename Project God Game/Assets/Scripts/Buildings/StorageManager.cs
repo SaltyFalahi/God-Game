@@ -9,9 +9,11 @@ public class StorageManager : MonoBehaviour
 
     public int totalStorage;
 
-    private void Awake()
+    public static StorageManager SharedInstance;
+
+    void Awake()
     {
-       
+        SharedInstance = this;
     }
 
     void Update()
@@ -50,6 +52,7 @@ public class StorageManager : MonoBehaviour
 
             if (request.count == 0)
             {
+                Debug.Log(request.count);
                 request.completed = true;
                 break;
             }
@@ -92,10 +95,3 @@ public class StorageManager : MonoBehaviour
         }
     }
 }
-
-//if(current.woodCount > request.count)
-//                    {
-//                        current.Remove(request.type);
-//                        current.woodCount -= request.count;
-//                        request.completed = true;
-//                    }

@@ -11,9 +11,7 @@ public class HandController : MonoBehaviour
 
     public Hand hand;
 
-    public LayerMask mask;
-
-    public List<GameObject> pickables;
+    public List<Pickable> pickables;
 
     public bool emptyHanded;
 
@@ -27,7 +25,6 @@ public class HandController : MonoBehaviour
         
         if (pickables.Count > 0)
         {
-            Debug.Log(pickables[0]);
             if (pickables[0].gameObject.GetComponentInParent<Pickable>())
             {
                 if (emptyHanded)
@@ -55,7 +52,7 @@ public class HandController : MonoBehaviour
                         break;
 
                     case Hand.Left:
-                        if (Input.GetButton("XRI_Left_TriggerButton") || Input.GetKey(KeyCode.X))
+                        if (Input.GetButton("XRI_Left_TriggerButton"))
                         {
                             pickables[0].SendMessage("OnHandTrigger", this);
 
@@ -78,11 +75,18 @@ public class HandController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pickables.Add(other.gameObject);
+        if (other.gameObject.GetComponent<Pickable>())
+        {
+            Debug.Log(other.name);
+            pickables.Add(other.GetComponent<Pickable>());
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        pickables.Remove(other.gameObject);
+        if (other.gameObject.GetComponent<Pickable>())
+        {
+            pickables.Remove(other.GetComponent<Pickable>());
+        }
     }
 }

@@ -90,8 +90,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673025820526208584}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.799995, y: 3.5, z: 24.9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -60, y: 1, z: 48.399994}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6673025820036202238}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villager: {fileID: 0}
   workPos: {fileID: 6673025820036202238}
-  free: 1
+  assigned: 0
 --- !u!114 &1383508030596816886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,22 +160,45 @@ MonoBehaviour:
   timer: 600
   assigned: 0
   progress:
-  - obj: {fileID: 0}
+  - obj: {fileID: 1283404280603650427, guid: 83137784ed3b99b458f5506b916387e1, type: 3}
     count: 10
     name: Wood
-  - obj: {fileID: 0}
-    count: 10
+  - obj: {fileID: 1283404280603650427, guid: 83137784ed3b99b458f5506b916387e1, type: 3}
+    count: 15
     name: Wood
-  - obj: {fileID: 0}
+  - obj: {fileID: 1283404280603650427, guid: 83137784ed3b99b458f5506b916387e1, type: 3}
     count: 20
     name: Wood
-  - obj: {fileID: 0}
+  - obj: {fileID: 1283404280603650427, guid: 83137784ed3b99b458f5506b916387e1, type: 3}
+    count: 25
+    name: Wood
+  - obj: {fileID: 1283404280603650427, guid: 83137784ed3b99b458f5506b916387e1, type: 3}
+    count: 30
+    name: Wood
+  - obj: {fileID: 7518385974653933449, guid: 3139ca1992eb9c7449e19f259560315e, type: 3}
     count: 10
     name: Stone
-  - obj: {fileID: 0}
+  - obj: {fileID: 7518385974653933449, guid: 3139ca1992eb9c7449e19f259560315e, type: 3}
+    count: 15
+    name: Stone
+  - obj: {fileID: 7518385974653933449, guid: 3139ca1992eb9c7449e19f259560315e, type: 3}
     count: 20
     name: Stone
-  sm: {fileID: 0}
+  - obj: {fileID: 7518385974653933449, guid: 3139ca1992eb9c7449e19f259560315e, type: 3}
+    count: 25
+    name: Stone
+  - obj: {fileID: 7518385974653933449, guid: 3139ca1992eb9c7449e19f259560315e, type: 3}
+    count: 30
+    name: Stone
+  - obj: {fileID: 5716722943275674848, guid: 7d421f3d697b94f4893ab78392a0d555, type: 3}
+    count: 10
+    name: Iron
+  - obj: {fileID: 5716722943275674848, guid: 7d421f3d697b94f4893ab78392a0d555, type: 3}
+    count: 20
+    name: Iron
+  - obj: {fileID: 5716722943275674848, guid: 7d421f3d697b94f4893ab78392a0d555, type: 3}
+    count: 30
+    name: Iron
   request: {fileID: 11400000, guid: cc5b70b8754566c4f948195b5511a90f, type: 2}
   lvl: 1
 --- !u!114 &-6169084461801605517

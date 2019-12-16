@@ -29,6 +29,7 @@ public class Production : Assignable
     private void Start()
     {
         type = "Gather";
+        productionTimer = 2;
     }
 
     private void Update()

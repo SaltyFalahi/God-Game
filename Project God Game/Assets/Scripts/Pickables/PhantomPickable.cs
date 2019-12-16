@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PhantomPickable : Pickable
 {
+    public Transform pivot;
+
     private Placement place;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
         place = GetComponent<Placement>();
@@ -27,22 +29,15 @@ public class PhantomPickable : Pickable
         if (handPara != null)
         {
             transform.SetParent(handPara.transform);
-            place.held = true;
-        }
-        if (rb)
-        {
+            transform.localPosition = pivot.localPosition;
             rb.isKinematic = true;
+            place.held = true;
         }
     }
     public override void OnHandTriggerReleased()
     {
         transform.SetParent(null);
-
+        rb.isKinematic = false;
         place.held = false;
-
-        if (rb)
-        {
-            rb.isKinematic = false;
-        }
     }
 }

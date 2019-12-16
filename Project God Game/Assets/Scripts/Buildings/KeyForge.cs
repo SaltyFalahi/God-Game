@@ -7,7 +7,7 @@ public class KeyForge : Assignable
 {
     public List<Progression> progress;
 
-    public StorageManager sm;
+    private StorageManager sm;
 
     public Request request;
 
@@ -20,6 +20,8 @@ public class KeyForge : Assignable
         RequestResource(progress[index].count, progress[index].name);
         index++;
         type = "Keyforge";
+
+        sm = StorageManager.SharedInstance;
     }
 
     void Update()
@@ -61,5 +63,7 @@ public class KeyForge : Assignable
     public void BuildKey(GameObject key)
     {
         Instantiate(key);
+
+        key.transform.position = transform.position;
     }
 }

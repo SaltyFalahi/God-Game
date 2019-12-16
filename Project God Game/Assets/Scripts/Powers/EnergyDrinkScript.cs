@@ -40,6 +40,7 @@ public class EnergyDrinkScript : MonoBehaviour
             }
         }
         RaycastHit hit;
+
         if(Physics.BoxCast(transform.position, Vector3.one, Vector3.down,out hit ,Quaternion.identity, 50, colLayer)) 
         {
 

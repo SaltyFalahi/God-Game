@@ -15,6 +15,8 @@ public class Villager : MonoBehaviour
 
     public int Lvl;
 
+    public bool free = true;
+
     private string[] names;
 
     void Start()

@@ -57,9 +57,8 @@ public class Building : MonoBehaviour
     {
         Instantiate(building);
 
-        building.transform.position = placement.phantom.transform.position;
-        building.transform.rotation = placement.phantom.transform.rotation;
+        building.transform.position = new Vector3(transform.position.x, 1, transform.position.z);
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 6139008231338753780}
   m_Layer: 10
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 8933043513263661482}
   m_Layer: 10
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2173,7 +2173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7674612762298258276}
   - component: {fileID: 834609798303708776}
-  - component: {fileID: 7964721942674874990}
   - component: {fileID: 5610097568597802342}
   - component: {fileID: 8551013388717385654}
   m_Layer: 0
@@ -2216,22 +2215,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7964721942674874990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8293582789802258968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaff57b101a4a1049a59d0a5b1e25934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 6021604576618057806}
-  cover: {fileID: 0}
-  timeInDark: 1
-  isFading: 0
 --- !u!114 &5610097568597802342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2239,7 +2222,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8293582789802258968}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b518258e9bd3af4885401162f4c9a7a, type: 3}
   m_Name: 

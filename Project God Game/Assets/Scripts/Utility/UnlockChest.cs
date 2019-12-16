@@ -11,16 +11,19 @@ public class UnlockChest : MonoBehaviour
 
     public Transform stored;
 
+    public bool locked;
+
     public string keyType;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        locked = true;
     }
 
     void Update()
     {
-        if (building == null)
+        if (building == null && !locked)
         {
             building = Instantiate(prefab);
             building.transform.position = stored.position;
@@ -32,8 +35,8 @@ public class UnlockChest : MonoBehaviour
         if (other.gameObject.CompareTag(keyType))
         {
             anim.SetBool("Unlocked", true);
-            gameObject.GetComponent<Pickable>().enabled = true;
-            Destroy(other);
+            locked = false;
+            Destroy(other.gameObject);
         }
     }
 }

@@ -6,12 +6,12 @@ public class VillagerPickable : Pickable
 {
     public Transform pivot;
 
-    private Assignment assignment;
+    private Villager villager;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        assignment = GetComponent<Assignment>();
+        villager = GetComponent<Villager>();
     }
 
     void Update()
@@ -31,12 +31,13 @@ public class VillagerPickable : Pickable
             transform.SetParent(handPara.transform);
             transform.localPosition = pivot.localPosition;
             rb.isKinematic = true;
+            villager.free = false;
         }
     }
     public override void OnHandTriggerReleased()
     {
         transform.SetParent(null);
-
         rb.isKinematic = false;
+        villager.free = true;
     }
 }

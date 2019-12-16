@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 public class Storage : Assignable
 {
-    public StorageManager sm;
-
     public IntVariable gatheredWood;
     public IntVariable gatheredStone;
     public IntVariable gatheredIron;
@@ -32,10 +30,13 @@ public class Storage : Assignable
     public bool full;
     public bool townhall;
 
+    private StorageManager sm;
+
     private float storageCountdown;
 
     void Start()
     {
+        sm = StorageManager.SharedInstance;
         sm.AddStorage(gameObject);
         type = "Storage";
     }
