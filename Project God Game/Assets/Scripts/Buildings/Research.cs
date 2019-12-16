@@ -9,6 +9,7 @@ public class Research : Assignable
     public IntVariable worship;
 
     public int index = 0;
+    public int lvl = 1;
 
     private void Start()
     {
@@ -22,10 +23,25 @@ public class Research : Assignable
             if (worship.Value >= progress[index].count && index < progress.Count)
             {
                 BuildTool(progress[index].obj);
-                worship.Value -= progress[index].count;
+                worship.Value -= progress[index].count - (lvl + stats.Fth) / 2;
                 index++;
             }
+
+            countdown -= Time.deltaTime;
+
+            if (countdown <= 0)
+            {
+                lvl++;
+                stats.Lvl++;
+                stats.Int++;
+                countdown = timer;
+            }
         }
+    }
+
+    private void Dead()
+    {
+        Destroy(this);
     }
 
     public void BuildTool(GameObject obj)

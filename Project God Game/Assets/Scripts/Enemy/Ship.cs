@@ -11,23 +11,22 @@ public class Ship : MonoBehaviour
 
     public float mySpeed;
     public float maxForce;
-    public float spawnCountdownTimer;
-    public float maxSpawnTimer;
-    public float currentSpawnTimer;
     public float spawnDist;
+    public float maxSpawnTimer;
+    public float maxSpawns;
+
+    private float spawnCountdown;
 
     Rigidbody myRb;
 
-    float maxSpawns = 5;
     float distance;
 
-    // Start is called before the first frame update
     void Awake()
     {
         myRb = GetComponent<Rigidbody>();
+        landingPoint = GameObject.FindGameObjectWithTag("Landing Point").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         distance = Vector3.Distance(transform.position, landingPoint.position);
@@ -44,7 +43,7 @@ public class Ship : MonoBehaviour
     {
         Vector3 positionDiff = landingPoint.position - transform.position;
 
-        float slowingRadius = 15f;
+        float slowingRadius = 30f;
         float checkDist = Vector3.Distance(transform.position, landingPoint.position);
         Quaternion rotation = Quaternion.LookRotation(positionDiff);
         
@@ -59,7 +58,7 @@ public class Ship : MonoBehaviour
 
             myRb.AddForce(mySteering);
 
-            Debug.Log(vectVelocity);
+            Debug.Log(mySteering);
         }
         else
         {
@@ -78,19 +77,18 @@ public class Ship : MonoBehaviour
     {
         if (maxSpawns >= 1)
         {
-            spawnCountdownTimer -= Time.deltaTime;
-            if (spawnCountdownTimer <= 0)
-            {
-                spawnCountdownTimer = 0;
-                currentSpawnTimer -= Time.deltaTime;
+            spawnCountdown -= Time.deltaTime;
 
-                if (currentSpawnTimer <= 0)
-                {
-                    maxSpawns--;
-                    Instantiate(enemyUnit, unitSpawnPoint.transform.position, Quaternion.identity);
-                    currentSpawnTimer = maxSpawnTimer;
-                }
+            if (spawnCountdown <= 0)
+            {
+                maxSpawns--;
+                Instantiate(enemyUnit, unitSpawnPoint.transform.position, Quaternion.identity);
+                spawnCountdown = maxSpawnTimer;
             }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

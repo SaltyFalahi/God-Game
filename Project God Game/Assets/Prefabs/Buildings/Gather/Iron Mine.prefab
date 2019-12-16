@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 2430750940439253527}
   - component: {fileID: 2430750940439253515}
   - component: {fileID: 2430750940439253526}
+  - component: {fileID: 5085914558409638084}
   m_Layer: 0
   m_Name: Iron Mine
   m_TagString: Building
@@ -235,7 +236,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.8, z: 1.5}
+  m_Size: {x: 1.5, y: 1.8, z: 1.8}
   m_Center: {x: 0.08, y: 0.48, z: 0.03}
 --- !u!54 &2430750940439253527
 Rigidbody:
@@ -266,12 +267,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
+  type: 
+  timer: 600
   assigned: 0
   mainStat: 0
   resource: {fileID: 11400000, guid: dcad849e9a5539a4c8ed38cae9b55576, type: 2}
   productionRate: 0
   lvl: 1
-  countdown: 2
+  productionTimer: 0
 --- !u!114 &2430750940439253526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +290,19 @@ MonoBehaviour:
   villager: {fileID: 0}
   workPos: {fileID: 2430750940927167163}
   free: 1
+--- !u!114 &5085914558409638084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430750940439253517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8515debd9e6f74c42af33ed5e5957e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
 --- !u!1 &2430750940927167164
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2430750940927167164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0.71, y: -0.301, z: 0.602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2430750940439253512}

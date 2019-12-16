@@ -16,6 +16,9 @@ TagManager:
   - Golden Key
   - Iron Key
   - Floor
+  - Hand
+  - Tutorial Key
+  - Landing Point
   layers:
   - Default
   - TransparentFX

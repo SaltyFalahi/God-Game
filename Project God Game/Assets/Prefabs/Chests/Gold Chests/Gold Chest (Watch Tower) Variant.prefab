@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5209096368423139862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1107612364187033870, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_Name
+      value: Gold Chest (Watch Tower)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107612364187202286, guid: b7e53e3e9244a0a4a938a101e2f7ce74,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334978851707364, guid: b7e53e3e9244a0a4a938a101e2f7ce74, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 6306707919876589133, guid: 865691fd69f42d345953486b6a4be47a,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7e53e3e9244a0a4a938a101e2f7ce74, type: 3}

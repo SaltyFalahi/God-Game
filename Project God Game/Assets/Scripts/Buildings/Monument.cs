@@ -5,6 +5,7 @@ using UnityEngine;
 public class Monument : Assignable
 {    
     public int buffedRate;
+    public int lvl = 1;
 
     private int productionRate;
 
@@ -13,13 +14,34 @@ public class Monument : Assignable
         type = "Buff";
     }
 
+    private void Update()
+    {
+        if (assigned)
+        {
+            countdown -= Time.deltaTime;
+
+            if (countdown <= 0)
+            {
+                lvl++;
+                stats.Lvl++;
+                stats.Fth++;
+                countdown = timer;
+            }
+        }
+    }
+
+    private void Dead()
+    {
+        Destroy(this);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Altar") && assigned)
         {
-            buffedRate = other.GetComponent<Production>().productionRate * 2;
-            other.GetComponent<Production>().productionRate = buffedRate;
             productionRate = other.GetComponent<Production>().productionRate;
+            buffedRate = other.GetComponent<Production>().productionRate + (lvl + stats.Fth) / 2;
+            other.GetComponent<Production>().productionRate = buffedRate;
         }
     }
 

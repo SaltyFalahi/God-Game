@@ -2,31 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerShoot : MonoBehaviour
+public class TowerShoot : Assignable
 {
     public GameObject bullet;
 
     public float shotTimer;
 
-    Transform target;
+    public int lvl;
+
+    private Transform target;
+
+    private float shotCountdown;
 
     void Start()
     {
-       
+
     }
 
     void Update()
     {
-        if (target != null)
+        if (target != null && assigned)
         {
-            shotTimer -= 1 * Time.deltaTime;
-            if (shotTimer <= 0f)
+            shotCountdown -= Time.deltaTime;
+            countdown -= Time.deltaTime;
+
+            if (shotCountdown <= 0f)
             {
                 var bulletInstance = Instantiate(bullet, transform.position, transform.rotation);
 
                 bulletInstance.SendMessage("Target", target);
-               
-                shotTimer = 3f;
+
+                shotTimer = (lvl + stats.Dex) / 2;
+            }
+
+            if (countdown <= 0)
+            {
+                lvl++;
+                stats.Lvl++;
+                stats.Dex++;
             }
         }
     }

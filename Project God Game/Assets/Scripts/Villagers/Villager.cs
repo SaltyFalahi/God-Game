@@ -15,21 +15,23 @@ public class Villager : MonoBehaviour
 
     public int Lvl;
 
+    public bool free = true;
+
     private string[] names;
 
     void Start()
     {
-        Str = Random.Range(1, 3);
-        Dex = Random.Range(1, 3);
-        Int = Random.Range(1, 3);
-        Fth = Random.Range(1, 3);
+        Str = Random.Range(1, 4);
+        Dex = Random.Range(1, 4);
+        Int = Random.Range(1, 4);
+        Fth = Random.Range(1, 4);
 
         Lvl = 1;
 
         if(textFile != null)
         {
             names = (textFile.text.Split('\n'));
-            villagerName = names[Random.Range(0, names.Length - 1)];
+            villagerName = names[Random.Range(0, names.Length)];
         }
     }
 }

@@ -26,28 +26,15 @@ public class Placement : MonoBehaviour
 
         if (!held && !building.placed)
         {
-            if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10))
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 5))
             {
-                phantom.transform.position = UnitPosition(transform.position).nodeWorldPos;
+                phantom.transform.position = hit.point;
+                phantom.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
                 building.placed = true;
 
                 building.RequestResource(building.progress[0].count, building.progress[0].name);
             }
         }
-    }
-
-    public Node UnitPosition(Vector3 worldPosition)
-    {
-        float percentX = (worldPosition.x + grid.gridWorldSize.x / 2) / grid.gridWorldSize.x;
-        float percentY = (worldPosition.z + grid.gridWorldSize.y / 2) / grid.gridWorldSize.y;
-
-        percentX = Mathf.Clamp01(percentX);
-        percentY = Mathf.Clamp01(percentY);
-
-        int x = Mathf.RoundToInt((grid.gridSizeX - 1) * percentX);
-        int y = Mathf.RoundToInt((grid.gridSizeX - 1) * percentY);
-
-        return grid.grid[x, y];
     }
 }

@@ -14,14 +14,12 @@ public class Enemy : MonoBehaviour
     float freezeCountdown;
     float slowCountdown;
 
-    // Start is called before the first frame update
     void Start()
     {
         myPathfinder = GetComponent<AStar>();
         myHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
 

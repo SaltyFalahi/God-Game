@@ -6,37 +6,27 @@ public class Spawning : MonoBehaviour
 {
     public GameObject enemyShip;
 
-    public float spawnCountdownTimer;
     public float maxSpawnTimer;
+    public float maxSpawns;
 
-    public float currentSpawnTimer;
+    private float spawnCountdown;
 
-    float maxSpawns = 1;
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        currentSpawnTimer = maxSpawnTimer;
+        spawnCountdown = maxSpawnTimer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (maxSpawns >= 1)
         {
-            spawnCountdownTimer -= Time.deltaTime;
-            if (spawnCountdownTimer <= 0)
-            {
-                spawnCountdownTimer = 0;
-                currentSpawnTimer -= Time.deltaTime;
+            spawnCountdown -= Time.deltaTime;
 
-                if (currentSpawnTimer <= 0)
-                {
-                    maxSpawns--;
-                    Instantiate(enemyShip, transform.position, Quaternion.identity);
-                    currentSpawnTimer = maxSpawnTimer;
-                }
+            if (spawnCountdown <= 0)
+            {
+                maxSpawns--;
+                Instantiate(enemyShip, transform.position, Quaternion.identity);
+                spawnCountdown = maxSpawnTimer;
             }
         }
     }
