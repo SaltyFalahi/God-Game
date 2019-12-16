@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhoneTargeting : MonoBehaviour
 {
-    public Object target;
+    public List<GameObject> targets = new List<GameObject>();
 
     public GameObject obj;
 
@@ -17,17 +17,39 @@ public class PhoneTargeting : MonoBehaviour
 
     void Update()
     {
-        RaycastHit hit;
+        float distance = Mathf.Infinity;
+        float tempDist = Mathf.Infinity;
 
-        Debug.DrawRay(transform.position, transform.forward * 50, Color.red);
-
-        if(Physics.Raycast(transform.position, transform.forward, out hit))
-        {
-            obj = hit.transform.gameObject;
-        }
-        else
+        if(targets.Count == 0)
         {
             obj = null;
+        }
+
+        for (int i = 0; i < targets.Count; i++)
+        {
+            distance = Vector3.Distance(targets[i].transform.position, transform.position);
+
+            if (distance < tempDist)
+            {
+                tempDist = distance;
+                obj = targets[i];
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Hand"))
+        {
+            targets.Add(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Hand"))
+        {
+            targets.Remove(other.gameObject);
         }
     }
 }

@@ -8,32 +8,43 @@ public class Assignment : MonoBehaviour
 
     public Transform workPos;
 
-    public bool free;
-
+    public bool assigned;
+    
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        if(villager != null && free)
+        if (villager != null)
         {
-            villager.transform.position = workPos.position;
+            assigned = true;
+        }
+        else
+        {
+            assigned = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Villager")
+        if(other.gameObject.tag == "Villager" && !assigned)
         {
-            //Highlight Color
+            villager = other.gameObject;
 
-            if (free)
+            if (villager.GetComponent<Villager>().free)
             {
-                villager = other.gameObject;
-                GetComponent<Production>().stats = villager.GetComponent<Villager>();
-                GetComponent<Production>().assigned = true;
+                villager.GetComponent<Rigidbody>().isKinematic = true;
+
+                villager.transform.position = workPos.position;
+
+                GetComponent<Assignable>().stats = villager.GetComponent<Villager>();
+                GetComponent<Assignable>().assigned = true;
+            }
+            else
+            {
+                villager = null;
             }
         }
     }
@@ -42,7 +53,8 @@ public class Assignment : MonoBehaviour
     {
         if(other.gameObject.tag == "Villager")
         {
-            GetComponent<Production>().assigned = false;
+            GetComponent<Assignable>().assigned = false;
+
             villager = null;
         }
     }

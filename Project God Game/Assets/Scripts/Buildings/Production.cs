@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Production : MonoBehaviour
+public class Production : Assignable
 {
     public enum AllStats
     {
@@ -16,24 +16,28 @@ public class Production : MonoBehaviour
 
     public IntVariable resource;
 
-    public Villager stats;
-
-    public int lvl = 1;
     public int productionRate;
 
-    public float countdown;
+    public int lvl = 1;
 
-    public bool assigned;
+    public float productionTimer;
 
     private int productionStat;
 
-    private float timer;
+    private float productionCountdown;
 
-    void Update()
+    private void Start()
+    {
+        type = "Gather";
+        productionTimer = 2;
+    }
+
+    private void Update()
     {
         if (assigned)
         {
-            timer -= Time.deltaTime;
+            productionCountdown -= Time.deltaTime;
+            countdown -= Time.deltaTime;
 
             switch (mainStat)
             {
@@ -57,17 +61,51 @@ public class Production : MonoBehaviour
                     break;
             }
 
-            if (timer <= 0)
+            if (productionCountdown <= 0)
             {
                 productionRate = (lvl + productionStat) / 2;
                 resource.Value += productionRate;
-                timer = countdown;
+                productionCountdown = productionTimer;
+            }
+
+            if (countdown <= 0)
+            {
+                lvl++;
+                stats.Lvl++;
+                countdown = timer;
+
+                switch (mainStat)
+                {
+                    case AllStats.Str:
+                        stats.Str++;
+                        break;
+
+                    case AllStats.Dex:
+                        stats.Dex++;
+                        break;
+
+                    case AllStats.Int:
+                        stats.Int++;
+                        break;
+
+                    case AllStats.Fth:
+                        stats.Fth++;
+                        break;
+
+                    default:
+                        break;
+                }
             }
         }
         else
         {
             stats = null;
-            timer = countdown;
+            productionCountdown = productionTimer;
         }
+    }
+
+    private void Dead()
+    {
+        Destroy(this);
     }
 }

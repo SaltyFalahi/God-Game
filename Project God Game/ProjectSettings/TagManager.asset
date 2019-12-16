@@ -6,6 +6,19 @@ TagManager:
   tags:
   - Villager
   - Building
+  - Wooden Key
+  - Unwalkable
+  - Arrow
+  - Bomb
+  - Enemy
+  - Freeze
+  - Slow
+  - Golden Key
+  - Iron Key
+  - Floor
+  - Hand
+  - Tutorial Key
+  - Landing Point
   layers:
   - Default
   - TransparentFX
@@ -22,13 +35,13 @@ TagManager:
   - sdf
   - sdf
   - 
+  - Unwalkable
+  - collisionLayer
+  - 
+  - 
+  - 
   - sdf
   - pickables
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

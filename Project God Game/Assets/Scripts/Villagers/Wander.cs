@@ -4,62 +4,48 @@ using UnityEngine;
 
 public class Wander : MonoBehaviour
 {
-    Vector3 acc;
-    Vector3 desired;
-    Vector3 seekV;
-    Vector3 circlePos;
-    Vector3 rotated;
-    Rigidbody rb;
-
     public float force;
     public float speed;
     public float circleDist;
     public float circleRad;
-    float randomAngle;
 
-    public GameObject chut;
-    Vector3 mousepos;
+    private Vector3 acc;
+    private Vector3 desired;
+    private Vector3 seekV;
+    private Vector3 circlePos;
+    private Vector3 rotated;
+    private Vector3 mousepos;
 
-    // Start is called before the first frame update
+    private Rigidbody rb;
+
+    private float randomAngle;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        // acc = Seek(chut.transform.position);
         acc = WanderMethod();
         rb.velocity += acc;
-
     }
+
     public Vector3 Seek(Vector3 seekTarget)
     {
-
         desired = (seekTarget - transform.position).normalized * speed;
         seekV = (desired - rb.velocity);
         if (seekV.magnitude > force)
         {
-            //seekV.Scale(new Vector3(force, force, force));
             seekV = seekV.normalized * force;
         }
         return seekV;
     }
     public Vector3 WanderMethod()
     {
-
         circlePos = transform.position + rb.velocity.normalized * circleDist;
         randomAngle = Random.Range(0, 360);
         Vector3 target = circlePos + (Quaternion.Euler(0, randomAngle, 0) * new Vector3(circleRad, 0, circleRad));
-
-
-        //rotated = circlePos;
-        //rotated= Quaternion.Euler(0, randomAngle, 0) * rotated;
-        //target = circlePos + rotated;
-        // chut.transform.position = target;
-
 
         return Seek(target);
     }

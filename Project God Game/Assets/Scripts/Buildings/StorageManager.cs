@@ -9,6 +9,13 @@ public class StorageManager : MonoBehaviour
 
     public int totalStorage;
 
+    public static StorageManager SharedInstance;
+
+    void Awake()
+    {
+        SharedInstance = this;
+    }
+
     void Update()
     {
         totalStorage = storages.Count * 50;
@@ -17,7 +24,7 @@ public class StorageManager : MonoBehaviour
         {
             for (int i = 0; i < requests.Count; i++)
             {
-                GetResource(requests[i]);
+                StartCoroutine(GetResource(requests[i]));
 
                 if (requests[i].completed)
                 {
@@ -37,51 +44,53 @@ public class StorageManager : MonoBehaviour
         storages.Remove(obj);
     }
 
-    public void GetResource(Request request)
+    public IEnumerator GetResource(Request request)
     {
         for (int i = 0; i < storages.Count; i++)
         {
             Storage current = storages[i].GetComponent<Storage>();
 
+            if (request.count == 0)
+            {
+                Debug.Log(request.count);
+                request.completed = true;
+                break;
+            }
+
             switch (request.type)
             {
                 case "Wood":
-                    for (int j = 0; j < current.woodCount; j++)
+                    if(current.woodCount >= request.count)
                     {
-                        current.Remove(request.type);
                         request.count--;
+                        current.Remove(request.type);
+                        yield return new WaitForSeconds(5);
                     }
                     break;
 
                 case "Stone":
-                    while (current.stoneCount > 0)
+                    for (int j = 0; j < current.stoneCount; j++)
                     {
-                        current.Remove(request.type);
                         request.count--;
+                        yield return new WaitForSeconds(5);
                     }
                     break;
 
                 case "Iron":
-                    while (current.ironCount > 0)
+                    for (int j = 0; j < current.ironCount; j++)
                     {
-                        current.Remove(request.type);
                         request.count--;
+                        yield return new WaitForSeconds(5);
                     }
                     break;
 
                 case "Food":
-                    while (current.foodCount > 0)
+                    for (int j = 0; j < current.foodCount; j++)
                     {
-                        current.Remove(request.type);
                         request.count--;
+                        yield return new WaitForSeconds(5);
                     }
                     break;
-            }
-
-            if (request.count == 0)
-            {
-                request.completed = true;
-                break;
             }
         }
     }
