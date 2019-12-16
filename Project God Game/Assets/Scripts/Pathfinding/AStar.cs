@@ -75,6 +75,7 @@ public class AStar : MonoBehaviour
         //    }
         //}
         FindPath(seeker.position, target.position);
+
         if (transform.position == finalPath[index].nodeWorldPos)
         {
             index++;
@@ -106,7 +107,7 @@ public class AStar : MonoBehaviour
         }
     }
 
-    bool RangeCheck(float unitRadius)
+    bool RangeCheck(float unitRadius) //are we still using this?
     {
         float distance = Mathf.Infinity;
         float tempDist = Mathf.Infinity;
