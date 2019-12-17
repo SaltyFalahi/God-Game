@@ -19,6 +19,11 @@ TagManager:
   - Hand
   - Tutorial Key
   - Landing Point
+  - Seagull
+  - Seagull3
+  - Seagull2
+  - Seagull1
+  - Seagull4
   layers:
   - Default
   - TransparentFX
@@ -51,7 +56,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Terrain
   m_SortingLayers:
   - name: Default
     uniqueID: 0
