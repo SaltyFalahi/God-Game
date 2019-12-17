@@ -128,7 +128,7 @@ MonoBehaviour:
   sm: {fileID: 0}
   progress:
   - obj: {fileID: 0}
-    count: 10
+    count: 30
     name: Wood
   request: {fileID: 11400000, guid: de41f92ca0f591647a6bbad9e0fd0077, type: 2}
   placement: {fileID: 0}

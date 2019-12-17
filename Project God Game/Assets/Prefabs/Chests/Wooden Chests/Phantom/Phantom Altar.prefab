@@ -128,7 +128,10 @@ MonoBehaviour:
   sm: {fileID: 0}
   progress:
   - obj: {fileID: 0}
-    count: 10
+    count: 15
+    name: Wood
+  - obj: {fileID: 0}
+    count: 15
     name: Wood
   request: {fileID: 11400000, guid: 4fc330441d626164eaf677a1577609a2, type: 2}
   placement: {fileID: 0}
@@ -165,3 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  pivot: {fileID: 0}
