@@ -29,11 +29,12 @@ public class PhantomPickable : Pickable
         if (handPara != null)
         {
             transform.SetParent(handPara.transform);
-            transform.localPosition = pivot.localPosition;
+            //transform.localPosition = pivot.localPosition;
             rb.isKinematic = true;
             place.held = true;
         }
     }
+
     public override void OnHandTriggerReleased()
     {
         transform.SetParent(null);

@@ -13,5 +13,5 @@ public class Assignable : MonoBehaviour
 
     public bool assigned;
 
-    protected float countdown;
+    protected float countdown = 600;
 }
