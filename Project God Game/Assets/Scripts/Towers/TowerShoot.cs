@@ -32,7 +32,7 @@ public class TowerShoot : Assignable
 
                 bulletInstance.SendMessage("Target", target);
 
-                shotTimer = (lvl + stats.Dex) / 2;
+                shotCountdown = shotTimer - (lvl + stats.Dex) / 2;
             }
 
             if (countdown <= 0)
@@ -40,6 +40,8 @@ public class TowerShoot : Assignable
                 lvl++;
                 stats.Lvl++;
                 stats.Dex++;
+
+                countdown = timer;
             }
         }
     }

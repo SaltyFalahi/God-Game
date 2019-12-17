@@ -34,7 +34,7 @@ public class AStar : MonoBehaviour
         seeker = transform;
         usedSpeed = mySpeed;
         myRb = GetComponent<Rigidbody>();
-        target = FindObjectOfType<StorageManager>().transform;
+        //target = FindObjectOfType<StorageManager>().transform;
     }
 
     void Update()

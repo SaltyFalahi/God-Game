@@ -17,11 +17,11 @@ public class KeyForge : Assignable
 
     void Start()
     {
+        sm = StorageManager.SharedInstance;
+
         RequestResource(progress[index].count, progress[index].name);
         index++;
         type = "Keyforge";
-
-        sm = StorageManager.SharedInstance;
     }
 
     void Update()
@@ -43,6 +43,7 @@ public class KeyForge : Assignable
                 lvl++;
                 stats.Lvl++;
                 stats.Fth++;
+
                 countdown = timer;
             }
         }
@@ -55,7 +56,15 @@ public class KeyForge : Assignable
 
     public void RequestResource(int value, string type)
     {
-        request.count = value - (lvl + stats.Fth) / 2;
+        if (stats)
+        {
+            request.count = value - (lvl + stats.Fth) / 2;
+        }
+        else
+        {
+            request.count = value;
+        }
+
         request.type = type;
         sm.requests.Add(request);
     }

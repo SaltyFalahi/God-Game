@@ -28,12 +28,18 @@ public class Placement : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, Vector3.down, out hit, 5))
             {
-                phantom.transform.position = hit.point;
-                phantom.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                if (hit.transform.gameObject.CompareTag("Floor"))
+                {
+                    phantom.transform.position = hit.point;
+                    phantom.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
-                building.placed = true;
+                    building.building.transform.position = hit.point;
+                    building.building.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
-                building.RequestResource(building.progress[0].count, building.progress[0].name);
+                    building.placed = true;
+
+                    building.RequestResource(building.progress[0].count, building.progress[0].name);
+                }
             }
         }
     }

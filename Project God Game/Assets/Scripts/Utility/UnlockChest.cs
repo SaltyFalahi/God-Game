@@ -36,7 +36,9 @@ public class UnlockChest : MonoBehaviour
         {
             anim.SetBool("Unlocked", true);
             locked = false;
-            Destroy(other.gameObject);
+            //other.GetComponentInParent<HandController>().pickables.Remove(other.GetComponent<Pickable>());
+            //other.transform.SetParent(null);
+            //Destroy(other.gameObject);
         }
     }
 }

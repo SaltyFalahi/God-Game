@@ -114,7 +114,7 @@ public class StatsDisplay : MonoBehaviour
 
                             keyForge = target.GetComponent<KeyForge>();
 
-                            if (keyForge.stats != null)
+                            if (keyForge.stats)
                             {
                                 stats.text = "Stats: \n" + "Current Request: " + keyForge.request.type +
                                 "\n" + "Current Amount Needed: " + keyForge.request.count +

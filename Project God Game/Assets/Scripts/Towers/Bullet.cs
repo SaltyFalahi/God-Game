@@ -105,6 +105,7 @@ public class Bullet : MonoBehaviour
                     }
                     break;
             }
+
             Destroy(gameObject);
         }
     }
