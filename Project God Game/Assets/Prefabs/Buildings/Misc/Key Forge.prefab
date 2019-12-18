@@ -91,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6673025820526208584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.910477, y: 1, z: 55.12275}
+  m_LocalPosition: {x: -95.63174, y: 1, z: -403.19318}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 6673025820036202238}
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   type: 
-  timer: 600
+  timer: 30
   assigned: 1
   progress:
   - obj: {fileID: 1283404280603650427, guid: 83137784ed3b99b458f5506b916387e1, type: 3}

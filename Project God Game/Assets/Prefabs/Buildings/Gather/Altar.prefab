@@ -92,8 +92,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5739957132336757176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36, y: 19.2, z: -49.800003}
+  m_LocalRotation: {x: -0.0005805428, y: 0, z: -0.0005403347, w: 0.9999997}
+  m_LocalPosition: {x: -117.87774, y: 1, z: -383.24344}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 5739957131883045134}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villager: {fileID: 0}
   workPos: {fileID: 5739957131883045134}
-  free: 1
+  assigned: 0
 --- !u!114 &-90392889598870240
 MonoBehaviour:
   m_ObjectHideFlags: 0
